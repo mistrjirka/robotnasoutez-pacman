@@ -33,7 +33,7 @@ class Robot():
 			sleep(0.06)
 		return sum(cache) / len(cache)
 	
-	async def checkWay(self, callback, US): #fue
+	async def checkWay(self, callback, US): #async function
 		data = [0,0,0]
 		
 		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
