@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from ev3dev.ev3 import GyroSensor, LargeMotor
-from time import sleep
-import math
-import asyncio
+# ~ from ev3dev.ev3 import GyroSensor, LargeMotor
+# ~ from time import sleep
+# ~ import math
+# ~ import asyncio
 
 class TrueTurn:
 	def __init__(self, motor1Port, motor2Port, gyroPort=None): #init
