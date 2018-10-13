@@ -39,6 +39,7 @@ class TrueTurn:
 			print("self")
 			print(self.GS.value())
 			print(str(angle - self.GS.value()) + " " + str(math.ceil(degrees - self.tolerance * degrees)) + " " + str(math.ceil(degrees + self.tolerance * degrees)))
+		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
 		angle = self.GS.value()
@@ -92,6 +93,7 @@ class TrueTurn:
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
+		self.resetValue()
 	def resetValue():
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
