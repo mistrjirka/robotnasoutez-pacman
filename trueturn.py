@@ -3,7 +3,6 @@
 from ev3dev.ev3 import GyroSensor, LargeMotor
 from time import sleep
 import math
-import asyncio
 
 class TrueTurn:
 	def __init__(self, motor1Port, motor2Port, gyroPort=None): #init
@@ -89,7 +88,10 @@ class TrueTurn:
 				self.M1.run_forever(speed_sp=speed * direction)
 			else:
 				print("good")
-	def Stop():
+	def stop():
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
+	def resetValue():
+		self.GS.mode = 'GYRO-RATE'
+		self.GS.mode = 'GYRO-ANG'
