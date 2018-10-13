@@ -1,3 +1,3 @@
 from trueturn import TrueTurn
-test = TrueTurn("OutA", "OutB")
+test = TrueTurn("outA", "outB")
 test.turn(90)
