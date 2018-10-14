@@ -33,7 +33,7 @@ class Robot():
 			sleep(0.06)
 		return sum(cache) / len(cache)
 	
-	async def checkWay(self, callback, US): #async function
+	async def checkWay(self, callback): #async function
 		data = [0,0,0]
 		
 		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
@@ -55,5 +55,9 @@ class Robot():
 
 if __name__ == "__main__":
 	Main = Robot("OutC", "OutA", "OutB")
-	
-	while 
+	# ~ run = False #later
+	loop = asyncio.get_event_loop() #python3.6
+	loop.run_until_complete(asyncio.wait(Main.checkWay))
+	loop.close()
+	# ~ asyncio.run(Main.checkWay()) #python3.7
+		
