@@ -63,7 +63,14 @@ if __name__ == "__main__":
 	def runProgram():
 		Main.checkWay()
 	Btn = Button()
+	
 	Btn.on_right(runProgram)
+	print("click on right button or autodestrucion is needed")
+	sleep(1)
+	print("autodestrucion in 5s")
+	sleep(5)
+	print("BOOOM")
+
 	# ~ run = False #later
 	# ~ loop = asyncio.get_event_loop() #python3.6
 	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
