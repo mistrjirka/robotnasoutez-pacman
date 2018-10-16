@@ -56,12 +56,14 @@ class Robot():
 		
 		# ~ callback(data)
 
+	
+
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
+	def runProgram():
+		Main.checkWay()
 	Btn = Button()
-	while True:
-		if Btn.value() == 1:
-			Main.checkWay()
+	Btn.on_right(runProgram)
 	# ~ run = False #later
 	# ~ loop = asyncio.get_event_loop() #python3.6
 	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
