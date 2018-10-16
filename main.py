@@ -33,6 +33,7 @@ class Robot():
 			sleep(0.06)
 			cache[1] = self.US.value()/10
 			sleep(0.06)
+		print(sum(cache) / len(cache))
 		return sum(cache) / len(cache)
 	
 	def checkWay(self): #async function
