@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from trueturn import TrueTurn
 from time import sleep
-from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, Button
+from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor
 import asyncio
 
 class Robot():
