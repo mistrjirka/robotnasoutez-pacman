@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from trueturn import TrueTurn
 from time import sleep
-from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor
+from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, Button
 import asyncio
 
 class Robot():
@@ -58,8 +58,10 @@ class Robot():
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
-	
-	Main.checkWay()
+	Btn = Button()
+	while True:
+		if Btn.value() == 1:
+			Main.checkWay()
 	# ~ run = False #later
 	# ~ loop = asyncio.get_event_loop() #python3.6
 	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
