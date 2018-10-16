@@ -56,8 +56,8 @@ class Robot():
 if __name__ == "__main__":
 	Main = Robot("OutC", "OutA", "OutB")
 	# ~ run = False #later
-	loop = asyncio.get_event_loop() #python3.6
-	loop.run_until_complete(asyncio.wait(Main.checkWay))
-	loop.close()
+	# ~ loop = asyncio.get_event_loop() #python3.6
+	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
+	# ~ loop.close()
 	asyncio.run(Main.checkWay()) #python3.7
 		
