@@ -51,7 +51,7 @@ class Robot():
 		sleep(self.SM_sleep)
 		data[2] = self.sonicValue()
 		
-		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
+		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		
 		# ~ callback(data)
