@@ -64,7 +64,7 @@ if __name__ == "__main__":
 		Main.checkWay()
 	Btn = Button()
 	
-	Btn.on_right(runProgram)
+	Btn.on_right = runProgram
 	print("click on right button or autodestrucion is needed")
 	sleep(1)
 	print("autodestrucion in 5s")
