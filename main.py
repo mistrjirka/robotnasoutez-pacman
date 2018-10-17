@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from trueturn import TrueTurn
 from time import sleep
-from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor
+from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
 import asyncio
 
 class Robot():
@@ -61,7 +61,9 @@ if __name__ == "__main__":
 		print(Main.checkWay())
 		
 	ts = TouchSensor()
-	print ("hello")
+	lcd = Screen()
+	
+	lcd.draw.text((48,13),'Ready to launch ICBM', fill='white')
 	while True:
 		sleep(0.05)
 		if ts.value() == 1:
