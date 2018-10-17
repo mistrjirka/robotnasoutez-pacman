@@ -110,7 +110,7 @@ class Robot():
 		return data
 	
 	def cycle(self):
-		
+		self.async_return["ways"] = self.waycheck()
 		print("start")
 		self.asyncWayCheck("ways")
 		print("after waycheck")
