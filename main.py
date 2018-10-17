@@ -64,6 +64,7 @@ if __name__ == "__main__":
 	lcd = Screen()
 	
 	lcd.draw.text((48,13),'Ready to launch ICBM', fill='white')
+	lcd.update()
 	while True:
 		sleep(0.05)
 		if ts.value() == 1:
