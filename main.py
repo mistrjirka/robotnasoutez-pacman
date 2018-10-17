@@ -36,7 +36,7 @@ class Robot():
 		
 		self.motor_speed_turning = motor_speed_turning
 		
-		self.stop_waycheck = False
+		self.stop_way_check = False
 		
 		self.async_return = {}
 		
