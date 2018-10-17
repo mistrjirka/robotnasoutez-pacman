@@ -29,11 +29,9 @@ class Robot():
 		print(cache)
 		while abs(cache[0] - cache[1]) > tolerance:
 			cache[0] = self.US.value()/10 
-			print(cache[0])
 			sleep(0.06)
 			cache[1] = self.US.value()/10
 			sleep(0.06)
-		print(sum(cache) / len(cache))
 		return sum(cache) / len(cache)
 	
 	def checkWay(self): #async function
@@ -41,15 +39,15 @@ class Robot():
 		
 		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
-		data[0] = self.sonicValue()
+		data[1] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
-		data[1] = self.sonicValue()
+		data[2] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=-180, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
-		data[2] = self.sonicValue()
+		data[0] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
@@ -61,7 +59,7 @@ class Robot():
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
 	def runProgram():
-		Main.checkWay()
+		print(Main.checkWay())
 		
 	ts = TouchSensor()
 	while True:
