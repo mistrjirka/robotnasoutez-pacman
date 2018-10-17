@@ -70,7 +70,7 @@ class Robot():
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
 	def runProgram():
-		print(Main.checkWay())
+		Main.cycle()
 		
 	ts = TouchSensor()
 	lcd = Screen()
