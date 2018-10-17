@@ -62,6 +62,7 @@ if __name__ == "__main__":
 		print(Main.checkWay())
 		
 	ts = TouchSensor()
+	print ("hello")
 	while True:
 		sleep(0.5)
 		if ts.value() == 1:
