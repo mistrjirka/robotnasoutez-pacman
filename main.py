@@ -63,8 +63,8 @@ if __name__ == "__main__":
 	ts = TouchSensor()
 	lcd = Screen()
 	lcd.draw.rectangle((0,0,177,40), fill='black')
-	lcd.draw.text((48,13),'Hello, world.', fill='white')
-	lcd.draw.text((36,80),'THIS TEXT IS BLACK')
+	lcd.draw.text((48,13),'Ready to Launch', fill='white')
+	lcd.draw.text((36,80),'Launch ICBM')
 	lcd.update()
 	while True:
 		sleep(0.05)
