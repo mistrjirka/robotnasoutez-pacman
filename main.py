@@ -111,10 +111,15 @@ class Robot():
 	
 	def cycle(self):
 		
-		self.asyncWayCheck("ways")
+		print("start")
+		loop = asyncio.new_event_loop()
+		asyncio.set_event_loop(loop)
+		result = loop.run_until_complete(self.asyncWayCheck("ways"))
+		print("after waycheck")
 		
 		while True:
-			print(self.async_return)
+			print("loooooop")
+			print(self.async_return["ways"])
 			sleep(1)
 		
 	def arrayCheck(self, array, value, inverted = False):
@@ -133,7 +138,7 @@ class Robot():
 	def setConfigArray(self, array):
 		self.config_array = array
 	
-	def asyncWayCheck(self, id_for_return):
+	async def asyncWayCheck(self, id_for_return):
 		loop = asyncio.get_event_loop()
 		
 		async def checkWayAsync():
