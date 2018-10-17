@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 import asyncio
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2, critical_distance = 20):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2, critical_distance = 10, max_map_size = [10,10], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 500, motor_speed_turning = 150):
 		
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -24,7 +24,63 @@ class Robot():
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
 		
+		self.map = [[0 for x in range(max_map_size[0])] for y in range(max_map_size[1])]
+		
 		self.critical_distance = critical_distance
+		
+		self.turn_tolerance = turn_tolerance
+		
+		self.straight_tolerance = straight_tolerance
+		
+		self.motor_speed = motor_speed
+		
+		self.motor_speed_turning = motor_speed_turning
+		
+		self.stop_waycheck = False
+		
+		self.async_return = {}
+		
+		def turnRight():
+			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
+		
+		def turnLeft():
+			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
+		
+		def straight():
+			self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
+		
+		def backward():
+			self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
+		
+		self.configArray = {
+			"turnCounter": 0,
+			
+			"movement":[ #turn left
+				{
+					"index": 0,
+					"type": -1,
+					"deg": 90,
+					"do": turnRight
+				},
+				{
+					"index": 2,
+					"type": 1,
+					"deg": -90,
+					"do": turnLeft
+				},
+				{
+					"index": 1,
+					"type": 0,
+					"deg": 0,
+					"do": straight
+				},
+				{
+					"type": 0,
+					"deg": 0,
+					"do": backward
+				}
+			]
+		}
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
@@ -54,8 +110,12 @@ class Robot():
 		return data
 	
 	def cycle(self):
-		ways = self.arrayCheck(self.checkWay(), self.critical_distance, False)
-		print(ways)
+		
+		self.asyncWayCheck("ways")
+		
+		while True:
+			print(self.async_return)
+			sleep(1)
 		
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
@@ -66,6 +126,25 @@ class Robot():
 			for i in array:
 				data.append(not(i > value))
 		return data
+	
+	def returnConfigArray(self):
+		return self.config_array
+	
+	def setConfigArray(self, array):
+		self.config_array = array
+	
+	def asyncWayCheck(self, id_for_return):
+		loop = asyncio.get_event_loop()
+		
+		async def checkWayAsync():
+			while True:
+				if self.stop_way_check:
+					break
+				self.async_return[id_for_return] = self.arrayCheck(self.checkWay(), self.critical_distance, False)
+		
+		coro = checkWayAsync()
+		
+		self.async_return = loop.run_until_complete(coro)
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
