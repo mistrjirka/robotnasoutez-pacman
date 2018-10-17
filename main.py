@@ -137,7 +137,6 @@ class Robot():
 		self.config_array = array
 	
 	def asyncWayCheck(self, id_for_return):
-		loop = asyncio.get_event_loop()
 		
 		def checkWayAsync():
 			while True:
