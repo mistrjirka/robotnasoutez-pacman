@@ -66,7 +66,7 @@ if __name__ == "__main__":
 	ts = TouchSensor()
 	while True:
 		sleep(0.5)
-		if ts.value == 1:
+		if ts.value() == 1:
 			runProgram()
 	
 
