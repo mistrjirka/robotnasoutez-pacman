@@ -26,7 +26,6 @@ class Robot():
 		
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
-		print(cache)
 		while abs(cache[0] - cache[1]) > tolerance:
 			cache[0] = self.US.value()/10 
 			sleep(0.06)
@@ -51,7 +50,7 @@ class Robot():
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
-		
+		return data
 		# ~ callback(data)
 
 	
