@@ -2,7 +2,7 @@
 from trueturn import TrueTurn
 from time import sleep
 from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
-import asyncio
+from threading import Thread 
 
 class Robot():
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2, critical_distance = 10, max_map_size = [10,10], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 500, motor_speed_turning = 150):
@@ -138,18 +138,17 @@ class Robot():
 	def setConfigArray(self, array):
 		self.config_array = array
 	
-	async def asyncWayCheck(self, id_for_return):
+	def asyncWayCheck(self, id_for_return):
 		loop = asyncio.get_event_loop()
 		
-		async def checkWayAsync():
+		def checkWayAsync():
 			while True:
 				if self.stop_way_check:
 					break
 				self.async_return[id_for_return] = self.arrayCheck(self.checkWay(), self.critical_distance, False)
 		
-		coro = checkWayAsync()
-		
-		self.async_return = loop.run_until_complete(coro)
+		t = Thread(target=checkWayAsync)
+		t.start()
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
