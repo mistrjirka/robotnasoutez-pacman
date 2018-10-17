@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor
 import asyncio
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.1):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2):
 		
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
 	ts = TouchSensor()
 	print ("hello")
 	while True:
-		sleep(0.5)
+		sleep(0.05)
 		if ts.value() == 1:
 			runProgram()
 	
