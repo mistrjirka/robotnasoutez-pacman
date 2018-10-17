@@ -112,9 +112,7 @@ class Robot():
 	def cycle(self):
 		
 		print("start")
-		loop = asyncio.new_event_loop()
-		asyncio.set_event_loop(loop)
-		result = loop.run_until_complete(self.asyncWayCheck("ways"))
+		self.asyncWayCheck("ways")
 		print("after waycheck")
 		
 		while True:
