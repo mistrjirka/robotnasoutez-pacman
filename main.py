@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 import asyncio
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 900, SM_sleep = 0.2, critical_distance = 20):
 		
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -19,11 +19,12 @@ class Robot():
 		
 		self.mot1 = LargeMotor(mot1)
 		self.mot2 = LargeMotor(mot2)
-		self.SM = MediumMotor(SM)
 		
+		self.SM = MediumMotor(SM)
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
 		
+		self.critical_distance = critical_distance
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
@@ -51,9 +52,20 @@ class Robot():
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		return data
-		# ~ callback(data)
-
 	
+	def cycle(self):
+		ways = self.arrayCheck(self.checkWay(), self.critical_distance, False)
+		print(ways)
+		
+	def arrayCheck(self, array, value, inverted = False):
+		data = []
+		if not inverted:
+			for i in array:
+				data.append(i > value)
+		else:
+			for i in array:
+				data.append(not(i > value))
+		return data
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
@@ -69,6 +81,7 @@ if __name__ == "__main__":
 		sleep(0.05)
 		if ts.value() == 1:
 			runProgram()
+			break
 	
 
 	# ~ run = False #later
