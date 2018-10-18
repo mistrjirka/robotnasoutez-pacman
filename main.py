@@ -118,7 +118,7 @@ class Robot():
 			print("loooooop")
 			print(self.async_return["ways"])
 			
-			options = self.ArrayIndexCheck(self.async_return["ways"])
+			options = self.ArrayIndexCheck(self.async_return["ways"], True)
 			todo = self.decisionMaking(options)
 			
 			todo["do"]()
