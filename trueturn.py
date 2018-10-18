@@ -89,11 +89,11 @@ class TrueTurn:
 				self.M1.run_forever(speed_sp=speed * direction)
 			else:
 				# ~ print("good")
-	def stop():
+	def stop(self):
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
 		self.resetValue()
-	def resetValue():
+	def resetValue(self):
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
