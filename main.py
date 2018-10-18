@@ -172,6 +172,7 @@ if __name__ == "__main__":
 		Main.cycle()
 		
 	ts = TouchSensor()
+	print ("ready to start")
 	lcd = Screen()
 	lcd.draw.rectangle((0,0,177,40), fill='black')
 	lcd.draw.text((48,13),'Ready to Launch ICBM', fill='white')
