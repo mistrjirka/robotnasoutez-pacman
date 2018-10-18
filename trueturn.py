@@ -22,23 +22,23 @@ class TrueTurn:
 		angle = self.GS.value()
 		run = False
 		while True:
-			print ("Go")
-			print(self.GS.value())
-			print(str(angle - self.GS.value()) + " " + str(math.ceil(degrees - self.tolerance * degrees)) + " " + str(math.ceil(degrees + self.tolerance * degrees)))
+			# ~ print ("Go")
+			# ~ print(self.GS.value())
+			# ~ print(str(angle - self.GS.value()) + " " + str(math.ceil(degrees - self.tolerance * degrees)) + " " + str(math.ceil(degrees + self.tolerance * degrees)))
 			if run == False:
 				run = True
-				print("fuck")
+				# ~ print("fuck")
 				self.M1.run_forever(speed_sp=self.speed * multiplier)
 				self.M2.run_forever(speed_sp=self.speed * multiplier * -1)
 			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees),math.ceil(degrees + self.tolerance * degrees), multiplier):
-				print("your")
+				# ~ print("your")
 				self.M2.stop()
 				self.M1.stop()
 				break
 			sleep(0.002)
-			print("self")
-			print(self.GS.value())
-			print(str(angle - self.GS.value()) + " " + str(math.ceil(degrees - self.tolerance * degrees)) + " " + str(math.ceil(degrees + self.tolerance * degrees)))
+			# ~ print("self")
+			# ~ print(self.GS.value())
+			# ~ print(str(angle - self.GS.value()) + " " + str(math.ceil(degrees - self.tolerance * degrees)) + " " + str(math.ceil(degrees + self.tolerance * degrees)))
 		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
@@ -66,7 +66,7 @@ class TrueTurn:
 			return succes
 		field = range(angle-tolerance, angle+tolerance)
 		while self.stop == False:
-			print (field)
+			# ~ print (field)
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
 			sleep(0.02)
@@ -74,21 +74,21 @@ class TrueTurn:
 			if inField(field, value) == 2:
 				self.M1.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
-					print(self.GS.value())
-					print("wrong")
+					# ~ print(self.GS.value())
+					# ~ print("wrong")
 					sleep(0.02)
 				self.M1.run_forever(speed_sp=speed * direction)
 				self.M2.run_forever(speed_sp=speed * direction)
 			elif inField(field, value) == 3:
 				self.M2.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
-					print(self.GS.value())
-					print("wrong")
+					# ~ print(self.GS.value())
+					# ~ print("wrong")
 					sleep(0.02)
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
 			else:
-				print("good")
+				# ~ print("good")
 	def stop():
 		self.stop = True
 		self.M2.stop()
