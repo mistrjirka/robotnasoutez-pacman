@@ -6,7 +6,7 @@ from threading import Thread
 
 class Robot():
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 800, SM_sleep = 0.5, critical_distance = 10, max_map_size = [10,10], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 500, motor_speed_turning = 150):
-		
+		#this is intitial configuration
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
 		else:
@@ -52,35 +52,34 @@ class Robot():
 		def backward():
 			self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
 		
-		self.configArray = {
-			"turnCounter": 0,
-			
-			"movement":[ #turn left
-				{
-					"index": 0,
-					"type": -1,
-					"deg": 90,
-					"do": turnRight
-				},
-				{
-					"index": 2,
-					"type": 1,
-					"deg": -90,
-					"do": turnLeft
-				},
-				{
-					"index": 1,
-					"type": 0,
-					"deg": 0,
-					"do": straight
-				},
-				{
-					"type": 0,
-					"deg": 0,
-					"do": backward
-				}
-			]
-		}
+		self.turnCounter = 0
+		
+		self.configArray = [ #turn left
+			{
+				"index": 0,
+				"type": -1,
+				"deg": 90,
+				"do": turnRight
+			},
+			{
+				"index": 2,
+				"type": 1,
+				"deg": -90,
+				"do": turnLeft
+			},
+			{
+				"index": 1,
+				"type": 0,
+				"deg": 0,
+				"do": straight
+			},
+			{
+				"type": 0,
+				"deg": 0,
+				"do": backward
+			}
+		]
+		
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
@@ -109,7 +108,7 @@ class Robot():
 		sleep(self.SM_sleep)
 		return data
 	
-	def cycle(self):
+	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
 		print("start")
 		self.asyncWayCheck("ways")
@@ -118,8 +117,13 @@ class Robot():
 		while True:
 			print("loooooop")
 			print(self.async_return["ways"])
-			sleep(1)
+			
+			options = self.ArrayIndexCheck(self.async_return["ways"])
+			todo = self.decisionMaking(options)
+			
+			todo["do"]()
 		
+	
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
 		if not inverted:
@@ -146,6 +150,20 @@ class Robot():
 		
 		t = Thread(target=checkWayAsync)
 		t.start()
+	
+	def ArrayIndexCheck(self, array, statement):
+		index = 0
+		data = []
+		for x in self.async_return["ways"]:
+			if x:
+				data.append(index)
+		return data
+	
+	def decisionMaking(self, options): #todo
+		
+		for x in self.configArray:
+			if x["index"] in options:
+				return x
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB")
@@ -163,7 +181,6 @@ if __name__ == "__main__":
 			runProgram()
 			break
 	
-
 	# ~ run = False #later
 	# ~ loop = asyncio.get_event_loop() #python3.6
 	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
