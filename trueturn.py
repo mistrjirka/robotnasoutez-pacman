@@ -88,6 +88,7 @@ class TrueTurn:
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
 			else:
+				pass
 				# ~ print("good")
 	def stop(self):
 		self.stop = True
