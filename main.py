@@ -117,8 +117,8 @@ class Robot():
 		while True:
 			print("loooooop")
 			print(self.async_return["ways"])
-			print(self.arrayCheck(self.async_return["ways"]))
-			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"]), True)
+			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
+			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
 			print(options)
 			todo = self.decisionMaking(options)
 			print(todo)
