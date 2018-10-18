@@ -122,6 +122,7 @@ class Robot():
 			todo = self.decisionMaking(options)
 			
 			todo["do"]()
+			sleep(0.5)
 		
 	
 	def arrayCheck(self, array, value, inverted = False):
