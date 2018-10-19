@@ -42,15 +42,17 @@ class Robot():
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
+			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
+			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 		
 		def straight():
 			print("running")
-			print (self.TrueTurn.isRunning)
+			print (self.TrueTurn.isRunning())
 			if self.TrueTurn.isRunning is not True:
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
