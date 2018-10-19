@@ -14,6 +14,7 @@ class TrueTurn:
 		self.M2 = LargeMotor(motor2Port)
 		self.stop = True
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
+		self.resetValue()
 		self.stopMotors()
 		self.tolerance = tolerance
 		self.speed = speed
@@ -28,14 +29,21 @@ class TrueTurn:
 				run = True
 				self.M1.run_forever(speed_sp=self.speed * multiplier)
 				self.M2.run_forever(speed_sp=self.speed * multiplier * -1)
-			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees),math.ceil(degrees + self.tolerance * degrees), multiplier):
+				
+			print ("debug of trueturn")
+			print (math.ceil(degrees - self.tolerance * degrees))
+			print (math.ceil(degrees + self.tolerance * degrees))
+			print (multiplier)
+			print(self.GS.value() )
+			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier):
 				self.M2.stop()
 				self.M1.stop()
 				break
 			sleep(0.002)
-		# ~ self.resetValue()
+		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
+		self.resetValue()
 		self.stopMotors()
 		angle = self.GS.value()
 		multiplier = 1
@@ -81,7 +89,7 @@ class TrueTurn:
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
-		# ~ self.resetValue()
+		self.resetValue()
 	def resetValue(self):
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
