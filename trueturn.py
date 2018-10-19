@@ -43,6 +43,7 @@ class TrueTurn:
 		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
+		self.stop()
 		angle = self.GS.value()
 		multiplier = 1
 		if angle < 0:
