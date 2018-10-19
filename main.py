@@ -74,7 +74,7 @@ class Robot():
 				"do": straight
 			},
 			{
-				"index": -1
+				"index": -1,
 				"type": 0,
 				"deg": 0,
 				"do": backward
