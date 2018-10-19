@@ -47,11 +47,17 @@ class Robot():
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 		
 		def straight():
-			self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
-		
+			def do():
+				self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
+			
+			t = Thread(target=do)
+			t.start()
 		def backward():
-			self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
-		
+			def do():
+				self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
+			
+			t = Thread(target=do)
+			t.start()
 		self.turnCounter = 0
 		
 		self.configArray = [ #turn left
