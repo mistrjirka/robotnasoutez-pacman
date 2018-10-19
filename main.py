@@ -60,6 +60,7 @@ class Robot():
 				
 				t = Thread(target=do)
 				t.start()
+				sleep(0.5)
 		def backward():
 			if self.TrueTurn.isRunning() is not True:
 				def do():
@@ -67,6 +68,7 @@ class Robot():
 				
 				t = Thread(target=do)
 				t.start()
+				sleep(0.5)
 		self.turnCounter = 0
 		
 		self.configArray = [ #turn left
