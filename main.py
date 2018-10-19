@@ -154,6 +154,8 @@ class Robot():
 		t.start()
 	
 	def ArrayIndexCheck(self, array, statement):
+		print("array")
+		print(array)
 		index = 0
 		data = []
 		for x in self.async_return["ways"]:
