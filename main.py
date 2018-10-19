@@ -117,6 +117,7 @@ class Robot():
 		while True:
 			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
+			print("options")
 			print(options)
 			todo = self.decisionMaking(options)
 			print(todo)
@@ -155,8 +156,9 @@ class Robot():
 		index = 0
 		data = []
 		for x in self.async_return["ways"]:
-			if x:
+			if x == statement:
 				data.append(index)
+			index += 1
 		return data
 	
 	def decisionMaking(self, options): #todo
