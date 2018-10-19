@@ -40,8 +40,6 @@ class Robot():
 		
 		self.async_return = {}
 		
-		self.main_thread
-		
 		def turnRight():
 			self.TrueTurn.stopMotors()
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
