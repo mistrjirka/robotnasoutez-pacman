@@ -157,6 +157,9 @@ class Robot():
 		index = 0
 		data = []
 		for x in self.async_return["ways"]:
+			print("x")
+			print(x)
+			print(statement)
 			if x == statement:
 				data.append(index)
 			index += 1
@@ -166,7 +169,7 @@ class Robot():
 	
 	def decisionMaking(self, options): #todo
 		for x in self.configArray:
-			print (x)
+			# ~ print (x)
 			if x["index"] in options:
 				return x
 
