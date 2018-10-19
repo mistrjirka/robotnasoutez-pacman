@@ -99,7 +99,6 @@ class Robot():
 	def checkWay(self): #async function
 		data = [0,0,0]
 		print("checkway")
-		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		data[1] = self.sonicValue()
 		
