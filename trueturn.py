@@ -183,6 +183,6 @@ class TrueTurn:
 		self.resetValue()
 	def resetValue(self):
 		self.GS.mode = 'GYRO-RATE'
+		self.GS.mode = 'GYRO-ANG'
 	def isRunning(self):
 		return not self.stop
-self.GS.mode = 'GYRO-ANG'
