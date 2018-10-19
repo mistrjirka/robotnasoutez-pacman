@@ -13,6 +13,7 @@ class TrueTurn:
 		self.M1 = LargeMotor(motor1Port)
 		self.M2 = LargeMotor(motor2Port)
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
+		self.resetValue()
 		self.stop()
 		self.tolerance = tolerance
 		self.speed = speed
@@ -43,6 +44,7 @@ class TrueTurn:
 		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
+		self.resetValue()
 		self.stop()
 		angle = self.GS.value()
 		multiplier = 1
@@ -100,3 +102,5 @@ class TrueTurn:
 	def resetValue(self):
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
+	def isRunning(self):
+		return not stop
