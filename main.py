@@ -62,16 +62,16 @@ class Robot():
 				"do": turnRight
 			},
 			{
-				"index": 2,
-				"type": 1,
-				"deg": -90,
-				"do": turnLeft
-			},
-			{
 				"index": 1,
 				"type": 0,
 				"deg": 0,
 				"do": straight
+			},
+			{
+				"index": 2,
+				"type": 1,
+				"deg": -90,
+				"do": turnLeft
 			},
 			{
 				"index": -1,
