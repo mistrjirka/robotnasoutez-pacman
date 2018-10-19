@@ -127,6 +127,7 @@ class Robot():
 			todo = self.decisionMaking(options)
 			print(todo)
 			todo["do"]()
+			print("endofloop")
 		
 	
 	def arrayCheck(self, array, value, inverted = False):
