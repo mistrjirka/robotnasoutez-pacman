@@ -92,7 +92,7 @@ class Robot():
 	
 	def checkWay(self): #async function
 		data = [0,0,0]
-		print("checkway")
+		# ~ print("checkway")
 		self.SM.run_to_rel_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		data[1] = self.sonicValue()
@@ -107,22 +107,24 @@ class Robot():
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
+		
+		print(data)
 		return data
 	
 	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
-		print("start")
+		# ~ print("start")
 		self.asyncWayCheck("ways")
-		print("after waycheck")
+		# ~ print("after waycheck")
 		
 		while True:
-			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
+			# ~ print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			print("options")
-			print(options)
+			# ~ print("options")
+			# ~ print(options)
 			todo = self.decisionMaking(options)
-			print(todo)
-			todo["do"]()
+			# ~ print(todo)
+			# ~ todo["do"]()
 			sleep(5)
 		
 	
@@ -160,9 +162,9 @@ class Robot():
 		index = 0
 		data = []
 		for x in array:
-			print("x")
-			print(x)
-			print(statement)
+			# ~ print("x")
+			# ~ print(x)
+			# ~ print(statement)
 			if x == statement:
 				data.append(index)
 			index += 1
