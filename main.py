@@ -152,7 +152,7 @@ class Robot():
 			while True:
 				if self.stop_way_check:
 					break
-				self.async_return[id_for_return] = self.arrayCheck(self.checkWay(), self.critical_distance, False)
+				self.async_return[id_for_return] = self.checkWay()
 		
 		t = Thread(target=checkWayAsync)
 		t.start()
