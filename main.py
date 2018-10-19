@@ -52,9 +52,9 @@ class Robot():
 		
 		def straight():
 			print("running")
-			print (self.TrueTurn.isRunning())
+			# ~ print (self.TrueTurn.isRunning())
 			if self.TrueTurn.isRunning() is not True:
-				print("BBBAAAAAADDDD boy")
+				# ~ print("BBBAAAAAADDDD boy")
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
 				
@@ -109,7 +109,7 @@ class Robot():
 	
 	def checkWay(self): #async function
 		data = [0,0,0]
-		print("checkway")
+		# ~ print("checkway")
 		sleep(self.SM_sleep)
 		data[1] = self.sonicValue()
 		
@@ -123,8 +123,8 @@ class Robot():
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
-		print("result")
-		print(data)
+		# ~ print("result")
+		# ~ print(data)
 		return data
 	
 	def cycle(self): #main function

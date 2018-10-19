@@ -30,11 +30,11 @@ class TrueTurn:
 				self.M1.run_forever(speed_sp=self.speed * multiplier)
 				self.M2.run_forever(speed_sp=self.speed * multiplier * -1)
 				
-			print ("debug of trueturn")
-			print (math.ceil(degrees - self.tolerance * degrees))
-			print (math.ceil(degrees + self.tolerance * degrees))
-			print (multiplier)
-			print(self.GS.value() )
+			# ~ print ("debug of trueturn")
+			# ~ print (math.ceil(degrees - self.tolerance * degrees))
+			# ~ print (math.ceil(degrees + self.tolerance * degrees))
+			# ~ print (multiplier)
+			# ~ print(self.GS.value() )
 			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier):
 				self.M2.stop()
 				self.M1.stop()
