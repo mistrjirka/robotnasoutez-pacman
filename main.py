@@ -44,11 +44,13 @@ class Robot():
 			self.TrueTurn.stopMotors()
 			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.1)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.1)
 		
 		def straight():
 			print("running")
