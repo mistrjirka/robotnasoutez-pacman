@@ -194,7 +194,7 @@ class Robot():
 				return x
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 20)
+	Main = Robot("outC", "outA", "outB", critical_distance = 30)
 	def runProgram():
 		Main.cycle()
 		
