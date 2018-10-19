@@ -50,6 +50,7 @@ class Robot():
 		
 		def straight():
 			self.TrueTurn.stopMotors()
+			print (self.TrueTurn.isRunning)
 			if self.TrueTurn.isRunning is not True:
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
