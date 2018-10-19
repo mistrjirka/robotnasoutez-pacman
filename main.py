@@ -56,16 +56,16 @@ class Robot():
 		
 		self.configArray = [ #turn left
 			{
-				"index": 0,
-				"type": -1,
-				"deg": 90,
-				"do": turnRight
-			},
-			{
 				"index": 1,
 				"type": 0,
 				"deg": 0,
 				"do": straight
+			},
+			{
+				"index": 0,
+				"type": -1,
+				"deg": 90,
+				"do": turnRight
 			},
 			{
 				"index": 2,
