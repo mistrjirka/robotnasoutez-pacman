@@ -107,6 +107,8 @@ class Robot():
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
+		print("result")
+		print(data)
 		return data
 	
 	def cycle(self): #main function
@@ -116,6 +118,7 @@ class Robot():
 		print("after waycheck")
 		
 		while True:
+			print("loop")
 			print(self.async_return["ways"])
 			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
@@ -155,20 +158,20 @@ class Robot():
 		t.start()
 	
 	def ArrayIndexCheck(self, array, statement): #bug
-		print("array")
-		print(array)
-		print(self.async_return["ways"])
+		# ~ print("array")
+		# ~ print(array)
+		# ~ print(self.async_return["ways"])
 		index = 0
 		data = []
 		for x in array:
-			print("x")
-			print(x)
+			# ~ print("x")
+			# ~ print(x)
 			print(statement)
 			if x == statement:
 				data.append(index)
 			index += 1
-		print("index")
-		print(index)
+		# ~ print("index")
+		# ~ print(index)
 		return data
 	
 	def decisionMaking(self, options): #todo
