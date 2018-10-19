@@ -52,7 +52,6 @@ class Robot():
 			
 			t = Thread(target=do)
 			t.start()
-			sleep
 		def backward():
 			def do():
 				self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
