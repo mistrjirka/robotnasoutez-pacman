@@ -12,6 +12,7 @@ class TrueTurn:
 			self.GS = GyroSensor()
 		self.M1 = LargeMotor(motor1Port)
 		self.M2 = LargeMotor(motor2Port)
+		self.stop = False
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
 		self.stopMotors()
 		self.tolerance = tolerance
