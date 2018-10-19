@@ -53,7 +53,7 @@ class Robot():
 		def straight():
 			print("running")
 			print (self.TrueTurn.isRunning())
-			if self.TrueTurn.isRunning is not True:
+			if self.TrueTurn.isRunning() is not True:
 				print("BBBAAAAAADDDD boy")
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
@@ -61,7 +61,7 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 		def backward():
-			if self.TrueTurn.isRunning is not True:
+			if self.TrueTurn.isRunning() is not True:
 				def do():
 					self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
 				
