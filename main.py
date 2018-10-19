@@ -158,20 +158,13 @@ class Robot():
 		t.start()
 	
 	def ArrayIndexCheck(self, array, statement): #bug
-		# ~ print("array")
-		# ~ print(array)
-		# ~ print(self.async_return["ways"])
 		index = 0
 		data = []
 		for x in array:
-			# ~ print("x")
-			# ~ print(x)
 			print(statement)
 			if x == statement:
 				data.append(index)
 			index += 1
-		# ~ print("index")
-		# ~ print(index)
 		return data
 	
 	def decisionMaking(self, options): #todo wierd
@@ -196,9 +189,3 @@ if __name__ == "__main__":
 		if ts.value() == 1:
 			runProgram()
 			break
-	
-	# ~ run = False #later
-	# ~ loop = asyncio.get_event_loop() #python3.6
-	# ~ loop.run_until_complete(asyncio.wait(Main.checkWay))
-	# ~ loop.close()
-# ~ asyncio.run(Main.checkWay()) #python3.7

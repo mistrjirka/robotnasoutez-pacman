@@ -13,6 +13,7 @@ class TrueTurn:
 		self.M1 = LargeMotor(motor1Port)
 		self.M2 = LargeMotor(motor2Port)
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
+		self.stop()
 		self.tolerance = tolerance
 		self.speed = speed
 		multiplier = -1
