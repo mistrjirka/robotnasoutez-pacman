@@ -162,8 +162,8 @@ class Robot():
 		return data
 	
 	def decisionMaking(self, options): #todo
-		
 		for x in self.configArray:
+			print (x)
 			if x["index"] in options:
 				return x
 
