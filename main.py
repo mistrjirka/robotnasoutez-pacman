@@ -115,15 +115,13 @@ class Robot():
 		print("after waycheck")
 		
 		while True:
-			print("loooooop")
-			print(self.async_return["ways"])
 			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
 			print(options)
 			todo = self.decisionMaking(options)
 			print(todo)
 			todo["do"]()
-			sleep(0.5)
+			sleep(5)
 		
 	
 	def arrayCheck(self, array, value, inverted = False):
