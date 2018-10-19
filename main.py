@@ -74,6 +74,7 @@ class Robot():
 				"do": straight
 			},
 			{
+				"index": -1
 				"type": 0,
 				"deg": 0,
 				"do": backward
@@ -159,6 +160,8 @@ class Robot():
 			if x == statement:
 				data.append(index)
 			index += 1
+		print("index")
+		print(index)
 		return data
 	
 	def decisionMaking(self, options): #todo
