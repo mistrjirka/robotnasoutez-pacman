@@ -14,7 +14,7 @@ class TrueTurn:
 		self.M2 = LargeMotor(motor2Port)
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
 		self.resetValue()
-		self.stop()
+		self.stopMotors()
 		self.tolerance = tolerance
 		self.speed = speed
 		multiplier = -1
@@ -45,7 +45,7 @@ class TrueTurn:
 		return True
 	def straight(self, direction, speed, tolerance):
 		self.resetValue()
-		self.stop()
+		self.stopMotors()
 		angle = self.GS.value()
 		multiplier = 1
 		if angle < 0:
@@ -94,7 +94,7 @@ class TrueTurn:
 			else:
 				pass
 				# ~ print("good")
-	def stop(self):
+	def stopMotors(self):
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
