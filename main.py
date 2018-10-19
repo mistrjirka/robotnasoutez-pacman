@@ -153,12 +153,13 @@ class Robot():
 		t = Thread(target=checkWayAsync)
 		t.start()
 	
-	def ArrayIndexCheck(self, array, statement):
-		print("array")
-		print(array)
+	def ArrayIndexCheck(self, array, statement): #bug
+		# ~ print("array")
+		# ~ print(array)
+		# ~ print(self.async_return["ways"])
 		index = 0
 		data = []
-		for x in self.async_return["ways"]:
+		for x in array:
 			print("x")
 			print(x)
 			print(statement)
