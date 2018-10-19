@@ -174,9 +174,9 @@ class Robot():
 		# ~ print(index)
 		return data
 	
-	def decisionMaking(self, options): #todo
+	def decisionMaking(self, options): #todo wierd
 		for x in self.configArray:
-			# ~ print (x)
+			print (x)
 			if x["index"] in options:
 				return x
 
