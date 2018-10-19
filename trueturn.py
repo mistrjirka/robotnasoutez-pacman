@@ -33,7 +33,7 @@ class TrueTurn:
 				self.M1.stop()
 				break
 			sleep(0.002)
-		self.resetValue()
+		# ~ self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
 		self.stopMotors()
@@ -81,7 +81,7 @@ class TrueTurn:
 		self.stop = True
 		self.M2.stop()
 		self.M1.stop()
-		self.resetValue()
+		# ~ self.resetValue()
 	def resetValue(self):
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'

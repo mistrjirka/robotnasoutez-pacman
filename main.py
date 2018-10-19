@@ -54,6 +54,7 @@ class Robot():
 			print("running")
 			print (self.TrueTurn.isRunning())
 			if self.TrueTurn.isRunning is not True:
+				print("BBBAAAAAADDDD boy")
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
 				
