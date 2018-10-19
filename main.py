@@ -116,6 +116,7 @@ class Robot():
 		print("after waycheck")
 		
 		while True:
+			print(self.async_return["ways"])
 			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
 			print("options")
