@@ -40,13 +40,18 @@ class Robot():
 		
 		self.async_return = {}
 		
+		self.main_thread
+		
 		def turnRight():
+			self.TrueTurn.stopMotors()
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 		
 		def turnLeft():
+			self.TrueTurn.stopMotors()
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 		
 		def straight():
+			self.TrueTurn.stopMotors()
 			if self.TrueTurn.isRunning is not True:
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
@@ -54,6 +59,7 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 		def backward():
+			self.TrueTurn.stopMotors()
 			if self.TrueTurn.isRunning is not True:
 				def do():
 					self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
@@ -164,7 +170,7 @@ class Robot():
 		t = Thread(target=checkWayAsync)
 		t.start()
 	
-	def ArrayIndexCheck(self, array, statement): #bug
+	def ArrayIndexCheck(self, array, statement):
 		index = 0
 		data = []
 		for x in array:
