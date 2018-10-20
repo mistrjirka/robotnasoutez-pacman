@@ -48,8 +48,8 @@ class Robot():
 			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.1)
 			self.resumeSearch()
+			sleep(0.2)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
@@ -57,8 +57,8 @@ class Robot():
 			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.1)
 			self.resumeSearch()
+			sleep(0.2)
 		
 		def straight():
 			print("running")
