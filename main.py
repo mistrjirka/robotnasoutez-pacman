@@ -40,17 +40,25 @@ class Robot():
 		
 		self.async_return = {}
 		
+		self.pause_way_check = False
+		
 		def turnRight():
 			self.TrueTurn.stopMotors()
+			self.pause_way_check()
+			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.1)
+			self.resumeSearch()
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
+			self.pause_way_check()
+			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.1)
+			self.resumeSearch()
 		
 		def straight():
 			print("running")
@@ -167,11 +175,14 @@ class Robot():
 	def asyncWayCheck(self, id_for_return):
 		
 		def checkWayAsync():
+			self.stop_way_check = False
 			while True:
 				if self.stop_way_check:
 					break
-				self.async_return[id_for_return] = self.checkWay()
-		
+				if self.pause_way_check not True:
+					self.async_return[id_for_return] = self.checkWay()
+				else:
+					sleep(0.2)
 		t = Thread(target=checkWayAsync)
 		t.start()
 	
@@ -194,7 +205,18 @@ class Robot():
 		for x in self.configArray:
 			if x["index"] == -1:
 				return x
-
+	
+	"""These three functions are for syncing searching with turning to prevent false results"""
+	
+	def stopSearch(self):
+		self.pause_way_check = True
+	
+	def resumeSearch(self):
+		self.pause_way_check = False
+	
+	def destroySearch(self):
+		self.stop_way_check = True
+	
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB", critical_distance = 30)
 	def runProgram():
