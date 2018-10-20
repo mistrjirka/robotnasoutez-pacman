@@ -44,7 +44,7 @@ class Robot():
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
-			self.pause_way_check()
+			self.pauseSearch()
 			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
@@ -53,7 +53,7 @@ class Robot():
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
-			self.pause_way_check()
+			self.pauseSearch()
 			sleep(0.1)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
@@ -208,7 +208,7 @@ class Robot():
 	
 	"""These three functions are for syncing searching with turning to prevent false results"""
 	
-	def stopSearch(self):
+	def pauseSearch(self):
 		self.pause_way_check = True
 	
 	def resumeSearch(self):
