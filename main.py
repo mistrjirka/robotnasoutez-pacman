@@ -179,7 +179,7 @@ class Robot():
 			while True:
 				if self.stop_way_check:
 					break
-				if self.pause_way_check not True:
+				if self.pause_way_check is not True:
 					self.async_return[id_for_return] = self.checkWay()
 				else:
 					sleep(0.2)
