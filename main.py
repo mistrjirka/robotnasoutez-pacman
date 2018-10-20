@@ -45,19 +45,19 @@ class Robot():
 		def turnRight():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
-			sleep(0.1)
+			sleep(0.2)
 			print("turning")
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.1)
+			sleep(0.2)
 			self.resumeSearch()
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
-			sleep(0.1)
+			sleep(0.2)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.1)
+			sleep(0.2)
 			self.resumeSearch()
 		
 		def straight():
