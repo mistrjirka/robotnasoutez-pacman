@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 from threading import Thread 
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.05, critical_distance = 20, max_map_size = [10,10], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 150, motor_speed_turning = 150):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.05, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 150, motor_speed_turning = 150):
 		#this is intitial configuration
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -24,7 +24,7 @@ class Robot():
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
 		
-		self.map = [[0 for x in range(max_map_size[0])] for y in range(max_map_size[1])]
+		self.map = self.createMap(max_map_size[0], max_map_size[1])
 		
 		self.critical_distance = critical_distance
 		
@@ -42,6 +42,19 @@ class Robot():
 		
 		self.pause_way_check = False
 		
+		self.to_do_mapping = None
+		
+		self.map_config_array = {
+			"right": {
+				"deg": 90,
+				"axis": 1
+			},
+			"left": {
+				"deg": -90,
+				"axis": -1
+			}
+		}
+		
 		def turnRight():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
@@ -50,6 +63,7 @@ class Robot():
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.resumeSearch()
+			self.mapTurn(self.map_config_array["right"])
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
@@ -59,12 +73,11 @@ class Robot():
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.resumeSearch()
+			self.mapTurn(self.map_config_array["left"])
 		
 		def straight():
 			print("running")
-			# ~ print (self.TrueTurn.isRunning())
 			if self.TrueTurn.isRunning() is not True:
-				# ~ print("BBBAAAAAADDDD boy")
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed, self.straight_tolerance)
 				
@@ -79,7 +92,8 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 			sleep(0.5)
-		self.turnCounter = 0
+		
+		self.turn_counter = 0
 		
 		self.config_array = [ #turn left
 			{
@@ -108,6 +122,7 @@ class Robot():
 			}
 		]
 		
+	
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
@@ -138,22 +153,6 @@ class Robot():
 		return data
 	
 	def cycle(self): #main function
-		# ~ self.async_return["ways"] = self.checkWay()
-		# ~ print("start")
-		# ~ self.asyncWayCheck("ways")
-		# ~ print("after waycheck")
-		
-		# ~ while True:
-			# ~ print("loop")
-			# ~ print(self.async_return["ways"])
-			# ~ print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
-			# ~ options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			# ~ print("options")
-			# ~ print(options)
-			# ~ todo = self.decisionMaking(options)
-			# ~ print(todo)
-			# ~ todo["do"]()
-			# ~ print("endofloop")
 		while True:
 			print("start")
 			value = self.sonicValue()
@@ -170,6 +169,7 @@ class Robot():
 					if x["index"] is 1:
 						x["do"]()
 					
+			
 	
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
@@ -234,6 +234,21 @@ class Robot():
 	
 	def rawValue(self):
 		return self.US.value()
+	
+	def createMap(self, x, y):
+		cache = []
+		for i in range (0,y):
+			cache.append([])
+			for j in range (0, x):
+				cache[i].append("empty")
+				
+		return cache
+		
+	def mapTurn(self, event):
+		self.to_do_mapping = event
+	
+	def asyncMapping(self):
+		pass
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB", critical_distance = 30)
@@ -243,7 +258,7 @@ if __name__ == "__main__":
 	ts = TouchSensor()
 	print ("ready to start")
 	lcd = Screen()
-	lcd.draw.rectangle((0,0,177,40), fill='black')
+	lcd.draw.rectangle((0,0,177,40), fill='white')
 	lcd.draw.text((48,13),'Ready to Launch ICBM', fill='white')
 	lcd.update()
 	while True:
