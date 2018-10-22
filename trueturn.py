@@ -3,9 +3,9 @@
 from ev3dev.ev3 import GyroSensor, LargeMotor
 from time import sleep
 import math
-
+from timeit import default_timer as timer
 class TrueTurn:
-	def __init__(self, motor1Port, motor2Port, gyroPort=None): #init
+	def __init__(self, motor1Port, motor2Port, gyroPort=None, wheelDiameter=None): #init
 		if GyroSensor != None:
 			self.GS = GyroSensor(gyroPort)
 		else:
@@ -13,6 +13,9 @@ class TrueTurn:
 		self.M1 = LargeMotor(motor1Port)
 		self.M2 = LargeMotor(motor2Port)
 		self.stop = True
+		self.wheelDiameter = wheelDiameter
+		self.time = 0
+		
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
 		self.resetValue()
 		self.stopMotors()
@@ -85,6 +88,14 @@ class TrueTurn:
 					sleep(0.02)
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
+	def measureDistanceStart(self):
+		self.time = timer()
+	def measureDistanceStop(self):
+		self.time = 0
+	
+	def distance(self, speed = 3.5):
+		return (timer() - self.time) / 3.5 *(self.wheelDiameter * Math.pi)
+	
 	def stopMotors(self):
 		self.stop = True
 		self.M2.stop()
