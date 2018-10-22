@@ -157,8 +157,9 @@ class Robot():
 		while True:
 			print("start")
 			value = self.normalSearch()
-			
+			print(value)
 			if value <= self.critical_distance:
+				print("prekazka")
 				self.TrueTurn.stopMotors()
 				options = self.ArrayIndexCheck(self.arrayCheck(self.checkWay(), self.critical_distance), True)
 				todo = self.decisionMaking(options)
