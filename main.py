@@ -161,6 +161,7 @@ class Robot():
 			if value <= self.critical_distance:
 				print("prekazka")
 				self.TrueTurn.stopMotors()
+				sleep(0.1)
 				options = self.ArrayIndexCheck(self.arrayCheck(self.checkWay(), self.critical_distance), True)
 				todo = self.decisionMaking(options)
 				todo["do"]()
