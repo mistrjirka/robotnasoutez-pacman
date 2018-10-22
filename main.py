@@ -138,23 +138,36 @@ class Robot():
 		return data
 	
 	def cycle(self): #main function
-		self.async_return["ways"] = self.checkWay()
-		print("start")
-		self.asyncWayCheck("ways")
-		print("after waycheck")
+		# ~ self.async_return["ways"] = self.checkWay()
+		# ~ print("start")
+		# ~ self.asyncWayCheck("ways")
+		# ~ print("after waycheck")
 		
+		# ~ while True:
+			# ~ print("loop")
+			# ~ print(self.async_return["ways"])
+			# ~ print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
+			# ~ options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
+			# ~ print("options")
+			# ~ print(options)
+			# ~ todo = self.decisionMaking(options)
+			# ~ print(todo)
+			# ~ todo["do"]()
+			# ~ print("endofloop")
 		while True:
-			print("loop")
-			print(self.async_return["ways"])
-			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
-			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			print("options")
-			print(options)
-			todo = self.decisionMaking(options)
-			print(todo)
-			todo["do"]()
-			print("endofloop")
-		
+			print("start")
+			value = self.normalSearch()
+			
+			if value <= self.critical_distance:
+				self.TrueTurn.stopMotors()
+				options = self.ArrayIndexCheck(self.arrayCheck(self.checkWay(), self.critical_distance), True)
+				todo = self.decisionMaking(options)
+				todo["do"]()
+			else:
+				for x in self.config_array:
+					if x["index"] is 1:
+						x["do"]()
+					
 	
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
@@ -217,6 +230,9 @@ class Robot():
 	def destroySearch(self):
 		self.stop_way_check = True
 	
+	def normalSearch(self):
+		return self.US.value()
+
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB", critical_distance = 30)
 	def runProgram():
