@@ -156,7 +156,7 @@ class Robot():
 			# ~ print("endofloop")
 		while True:
 			print("start")
-			value = self.normalSearch()
+			value = self.sonicValue()
 			print(value)
 			if value <= self.critical_distance:
 				print("prekazka")
@@ -231,7 +231,7 @@ class Robot():
 	def destroySearch(self):
 		self.stop_way_check = True
 	
-	def normalSearch(self):
+	def rawValue(self):
 		return self.US.value()
 
 if __name__ == "__main__":
