@@ -81,7 +81,7 @@ class Robot():
 			sleep(0.5)
 		self.turnCounter = 0
 		
-		self.configArray = [ #turn left
+		self.config_array = [ #turn left
 			{
 				"index": 1,
 				"type": 0,
@@ -210,12 +210,12 @@ class Robot():
 		return data
 	
 	def decisionMaking(self, options): #todo wierd
-		for x in self.configArray:
+		for x in self.config_array:
 			print (x)
 			if x["index"] in options:
 				return x
 		
-		for x in self.configArray:
+		for x in self.config_array:
 			if x["index"] == -1:
 				return x
 	
