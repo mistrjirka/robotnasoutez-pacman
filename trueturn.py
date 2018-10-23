@@ -77,12 +77,14 @@ class TrueTurn:
 			sleep(0.2)
 			value = self.GS.value()
 			if inField(field, value) == 2:
+				print("compesating")
 				self.M1.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
 					sleep(0.02)
 				self.M1.run_forever(speed_sp=speed * direction)
 				self.M2.run_forever(speed_sp=speed * direction)
 			elif inField(field, value) == 3:
+				print("compesating")
 				self.M2.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
 					sleep(0.02)
