@@ -75,7 +75,7 @@ class TrueTurn:
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
 			sleep(0.2)
-			if self.stop is False:
+			if self.stop is True:
 				self.stopMotors()
 			value = self.GS.value()
 			if inField(field, value) == 2:
@@ -90,8 +90,8 @@ class TrueTurn:
 					sleep(0.02)
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
-			if self.stop is False:
-				self.stopMotors()
+		if self.stop is True:
+			self.stopMotors()
 	def measureDistanceStart(self):
 		self.time = timer()
 	def measureDistanceStop(self):
