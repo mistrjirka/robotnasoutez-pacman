@@ -75,8 +75,6 @@ class TrueTurn:
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
 			sleep(0.2)
-			if self.stop is True:
-				self.stopMotors()
 			value = self.GS.value()
 			if inField(field, value) == 2:
 				self.M1.run_forever(speed_sp=speed - 50 * direction)
