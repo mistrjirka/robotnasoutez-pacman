@@ -55,26 +55,6 @@ class Robot():
 			}
 		}
 		
-		def turnRight():
-			self.TrueTurn.stopMotors()
-			self.pauseSearch()
-			sleep(0.2)
-			print("turning")
-			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.2)
-			self.resumeSearch()
-			self.mapTurn(self.map_config_array["right"])
-		
-		def turnLeft():
-			self.TrueTurn.stopMotors()
-			self.pauseSearch()
-			sleep(0.2)
-			print("turning")
-			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.2)
-			self.resumeSearch()
-			self.mapTurn(self.map_config_array["left"])
-		
 		def straight():
 			print("running")
 			if self.TrueTurn.isRunning() is not True:
@@ -84,6 +64,7 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 			sleep(0.5)
+		
 		def backward():
 			if self.TrueTurn.isRunning() is not True:
 				def do():
@@ -92,6 +73,32 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 			sleep(0.5)
+		
+		def turnLeft():
+			self.TrueTurn.stopMotors()
+			self.pauseSearch()
+			sleep(0.2)
+			print("turning")
+			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.2)
+			self.mapTurn(self.map_config_array["right"])
+			straight()
+			sleep(0.5)
+			self.resumeSearch()
+		
+		def turnRight():
+			self.TrueTurn.stopMotors()
+			self.pauseSearch()
+			
+			sleep(0.2)
+			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.2)
+			
+			self.mapTurn(self.map_config_array["right"])
+			straight()
+			sleep(0.5)
+			self.resumeSearch()
+		
 		
 		self.turn_counter = 0
 		
