@@ -130,7 +130,7 @@ class Robot():
 		]
 		
 	
-	def sonicValue(self, tolerance = 5):
+	def sonicValue(self, tolerance = 10):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
 			cache[0] = self.US.value()/10 
