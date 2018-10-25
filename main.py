@@ -160,21 +160,22 @@ class Robot():
 		return data
 	
 	def cycle(self): #main function
+		self.async_return["ways"] = self.checkWay()
+		print("start")
+		self.asyncWayCheck("ways")
+		print("after waycheck")
+		
 		while True:
-			print("start")
-			value = self.sonicValue()
-			print(value)
-			if value <= self.critical_distance:
-				print("prekazka")
-				self.TrueTurn.stopMotors()
-				sleep(0.1)
-				options = self.ArrayIndexCheck(self.arrayCheck(self.checkWay(), self.critical_distance), True)
-				todo = self.decisionMaking(options)
-				todo["do"]()
-			else:
-				for x in self.config_array:
-					if x["index"] is 1:
-						x["do"]()
+			print("loop")
+			print(self.async_return["ways"])
+			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
+			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
+			print("options")
+			print(options)
+			todo = self.decisionMaking(options)
+			print(todo)
+			todo["do"]()
+			print("endofloop")
 					
 			
 	
