@@ -74,6 +74,11 @@ class Robot():
 				t.start()
 			sleep(0.5)
 		
+		def afterTurn():
+			straight()
+			self.resumeSearch()
+			sleep(0.5)
+		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
@@ -82,9 +87,7 @@ class Robot():
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.mapTurn(self.map_config_array["right"])
-			straight()
-			sleep(0.5)
-			self.resumeSearch()
+			afterTurn()
 			print ("end of turning")
 		
 		def turnRight():
@@ -96,9 +99,7 @@ class Robot():
 			sleep(0.2)
 			print ("turning")
 			self.mapTurn(self.map_config_array["right"])
-			straight()
-			sleep(0.5)
-			self.resumeSearch()
+			afterTurn()
 			print ("end of turning")
 		
 		self.turn_counter = 0
