@@ -260,7 +260,7 @@ class Robot():
 		pass
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 10)
+	Main = Robot("outC", "outA", "outB", critical_distance = 18)
 	def runProgram():
 		Main.cycle()
 		
