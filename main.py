@@ -133,12 +133,11 @@ class Robot():
 		
 	
 	def sonicValue(self, tolerance = 10):
-		cache = [1,20]
-		while abs(cache[0] - cache[1]) > tolerance:
+		cache = [1,100]
+		while abs(cache[0] - cache[1]) > tolerance and cache[0] < self.critical_distance or cache[1] < self.critical_distance:
 			cache[0] = self.US.value()/10 
-			sleep(0.06)
+			sleep(0.01)
 			cache[1] = self.US.value()/10
-			sleep(0.06)
 		return sum(cache) / len(cache)
 	
 	def checkWay(self): #async function
