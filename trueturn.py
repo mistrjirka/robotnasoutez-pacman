@@ -52,7 +52,7 @@ class TrueTurn:
 								self.M2.run_forever(speed_sp=self.speed * loc_multiplier * -1 / 2)
 							breaker = True
 			
-			if braker:
+			if breaker:
 				break
 			sleep(0.002)
 		self.resetValue()
