@@ -36,9 +36,12 @@ class TrueTurn:
 		slowRightTurn = False # not actually right
 		
 		slowLeftTurn = False # not actually left
-		
-		field = range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier)
-		advancedField = range(math.ceil(degrees - 10 * degrees), math.ceil(degrees + 10 * degrees), multiplier)
+		if tolerance > 0:
+			field = range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier)
+			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
+		else:
+			field = [self.tolerance]
+			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
 		
 		while angle - self.GS.value() not in field:
 			
