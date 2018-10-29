@@ -27,7 +27,7 @@ class TrueTurn:
 		self.GS.mode='GYRO-ANG'
 		angle = self.GS.value()
 		run = False
-		breaker = False
+		self.breaker = False
 		while True:
 			if run == False:
 				run = True
@@ -46,6 +46,7 @@ class TrueTurn:
 					self.M1.stop()
 					sleep(0.1)
 					if angle - self.GS.value() not in field:
+						print("correction")
 						if angle - self.GS.value() > field[len(field) - 1]:
 							loc_multiplier = multiplier * -1
 							while angle - self.GS.value() not in field:
@@ -54,7 +55,7 @@ class TrueTurn:
 								sleep(0.001)
 							self.M2.stop()
 							self.M1.stop()
-							breaker = True
+							self.breaker = True
 						elif angle - self.GS.value() < field[0]:
 							loc_multiplier = multiplier * -1
 							while angle - self.GS.value() not in field:
@@ -63,11 +64,12 @@ class TrueTurn:
 								sleep(0.001)
 							self.M2.stop()
 							self.M1.stop()
-							breaker = True
+							self.breaker = True
 					else:
-						breaker = True
+						print("ok")
+						self.breaker = True
 			check()
-			if breaker:
+			if self.breaker:
 				break
 			sleep(0.002)
 		self.resetValue()
