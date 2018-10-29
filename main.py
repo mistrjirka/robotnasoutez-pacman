@@ -77,8 +77,10 @@ class Robot():
 		def afterTurn():
 			straight()
 			sleep(0.2)
+			self.async_return["ways"] = self.checkWay()
+			print(self.async_return["ways"])
 			self.resumeSearch()
-			sleep(0.6)
+			sleep(0.1)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
@@ -135,7 +137,7 @@ class Robot():
 	
 	def sonicValue(self, tolerance = 10):
 		cache = [1,100]
-		while abs(cache[0] - cache[1]) > tolerance and not (cache[0] > self.critical_distance and cache[1] > self.critical_distance):
+		while abs(cache[0] - cache[1]) > tolerance and not (cache[0] > self.critical_distance * 1.5 and cache[1] > self.critical_distance * 1.5):
 			cache[0] = self.US.value()/10 
 			sleep(0.025)
 			cache[1] = self.US.value()/10
@@ -172,13 +174,12 @@ class Robot():
 			print(self.async_return["ways"])
 			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
 			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			print("options")
-			print(options)
+			# ~ print("options")
+			# ~ print(options)
 			todo = self.decisionMaking(options)
 			print(todo)
 			todo["do"]()
 			print("endofloop")
-					
 			
 	
 	def arrayCheck(self, array, value, inverted = False):
