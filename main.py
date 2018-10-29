@@ -185,10 +185,10 @@ class Robot():
 		data = []
 		if not inverted:
 			for i in array:
-				data.append(i > value)
+				data.append(i => value)
 		else:
 			for i in array:
-				data.append(not(i > value))
+				data.append(not(i => value))
 		return data
 	
 	def returnConfigArray(self):
@@ -261,7 +261,7 @@ class Robot():
 		pass
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 18.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 19.5)
 	def runProgram():
 		Main.cycle()
 		
