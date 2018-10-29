@@ -185,10 +185,10 @@ class Robot():
 		data = []
 		if not inverted:
 			for i in array:
-				data.append(i => value)
+				data.append(i >= value)
 		else:
 			for i in array:
-				data.append(not(i => value))
+				data.append(not(i >= value))
 		return data
 	
 	def returnConfigArray(self):
