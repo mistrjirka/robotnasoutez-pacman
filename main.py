@@ -77,7 +77,7 @@ class Robot():
 		def afterTurn():
 			straight()
 			self.resumeSearch()
-			sleep(0.3)
+			sleep(0.5)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
