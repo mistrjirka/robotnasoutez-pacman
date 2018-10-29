@@ -36,8 +36,8 @@ class TrueTurn:
 			# ~ print ("debug of trueturn")
 			# ~ print (math.ceil(degrees - self.tolerance * degrees))
 			# ~ print (math.ceil(degrees + self.tolerance * degrees))
-			# ~ print (multiplier)
-			# ~ print(self.GS.value() )
+			print ("deg")
+			print(self.GS.value() )
 			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier):
 				self.M2.stop()
 				self.M1.stop()
