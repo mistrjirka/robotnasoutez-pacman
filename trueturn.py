@@ -43,6 +43,8 @@ class TrueTurn:
 		while angle - self.GS.value() not in field:
 			
 			if angle - self.GS.value() in advancedField:
+				print("minor")
+				print(self.GS.value())
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not slowRightTurn:
 						self.M1.run_forever(speed_sp=self.speed * multiplier / 2.5)
@@ -77,6 +79,8 @@ class TrueTurn:
 						leftTurn = True
 					else:
 						sleep(0.002)
+		self.M1.stop()
+		self.M2.stop()
 		sleep(0.1)
 		
 		leftTurn = False
@@ -101,7 +105,8 @@ class TrueTurn:
 						rightTurn = False
 						leftTurn = True
 						sleep(0.001)
-		
+			self.M1.stop()
+			self.M2.stop()
 		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
