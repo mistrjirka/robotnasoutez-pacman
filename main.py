@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 from threading import Thread 
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.1, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 200, motor_speed_turning = 150):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.15, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 200, motor_speed_turning = 150):
 		#this is intitial configuration
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -134,11 +134,11 @@ class Robot():
 	
 	def sonicValue(self, tolerance = 10):
 		cache = [1,100]
-		while abs(cache[0] - cache[1]) > tolerance and cache[0] < self.critical_distance or cache[1] < self.critical_distance:
+		while abs(cache[0] - cache[1]) > tolerance and not (cache[0] > self.critical_distance and cache[1] > self.critical_distance):
 			cache[0] = self.US.value()/10 
-			sleep(0.02)
+			sleep(0.025)
 			cache[1] = self.US.value()/10
-			sleep(0.02)
+			sleep(0.025)
 		return sum(cache) / len(cache)
 	
 	def checkWay(self): #async function
