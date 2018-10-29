@@ -44,14 +44,29 @@ class TrueTurn:
 				if angle - self.GS.value() in field:
 					self.M2.stop()
 					self.M1.stop()
+					sleep(0.1)
 					if angle - self.GS.value() not in field:
 						if angle - self.GS.value() > field[len(field) - 1]:
 							loc_multiplier = multiplier * -1
 							while angle - self.GS.value() not in field:
 								self.M1.run_forever(speed_sp=self.speed * loc_multiplier / 2)
 								self.M2.run_forever(speed_sp=self.speed * loc_multiplier * -1 / 2)
+								sleep(0.001)
+							self.M2.stop()
+							self.M1.stop()
 							breaker = True
-			
+						elif angle - self.GS.value() < field[0]:
+							loc_multiplier = multiplier * -1
+							while angle - self.GS.value() not in field:
+								self.M1.run_forever(speed_sp=self.speed * loc_multiplier / 2)
+								self.M2.run_forever(speed_sp=self.speed * loc_multiplier * -1 / 2)
+								sleep(0.001)
+							self.M2.stop()
+							self.M1.stop()
+							breaker = True
+					else:
+						breaker = True
+			check()
 			if breaker:
 				break
 			sleep(0.002)
