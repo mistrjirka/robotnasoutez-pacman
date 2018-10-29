@@ -76,8 +76,9 @@ class Robot():
 		
 		def afterTurn():
 			straight()
+			sleep(0.2)
 			self.resumeSearch()
-			sleep(0.5)
+			sleep(0.6)
 		
 		def turnLeft():
 			self.TrueTurn.stopMotors()
@@ -144,9 +145,8 @@ class Robot():
 	def checkWay(self): #async function
 		data = [0,0,0]
 		# ~ print("checkway")
-		sleep(self.SM_sleep)
 		data[1] = self.sonicValue()
-		
+		sleep(self.SM_sleep)
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		data[0] = self.sonicValue()
@@ -261,7 +261,7 @@ class Robot():
 		pass
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 19.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 20.5)
 	def runProgram():
 		Main.cycle()
 		
