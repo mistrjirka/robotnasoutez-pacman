@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 from threading import Thread 
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.15, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 120, motor_speed_turning = 100):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.15, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100):
 		#this is intitial configuration
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
