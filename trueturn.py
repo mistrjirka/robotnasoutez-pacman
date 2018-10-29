@@ -37,11 +37,19 @@ class TrueTurn:
 			# ~ print (math.ceil(degrees - self.tolerance * degrees))
 			# ~ print (math.ceil(degrees + self.tolerance * degrees))
 			print ("deg")
-			print(self.GS.value() )
-			if angle - self.GS.value() in range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier):
-				self.M2.stop()
-				self.M1.stop()
-				break
+			print(self.GS.value())
+			def check():
+				field = range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier)
+				if angle - self.GS.value() in field:
+					self.M2.stop()
+					self.M1.stop()
+					if angle - self.GS.value() not in field:
+						if angle - self.GS.value() > field[len(field) - 1]:
+							loc_multiplier = multiplier * -1
+							while angle - self.GS.value() not in field:
+								self.M1.run_forever(speed_sp=self.speed * loc_multiplier)
+								self.M2.run_forever(speed_sp=self.speed * loc_multiplier * -1)
+					break
 			sleep(0.002)
 		self.resetValue()
 		return True
