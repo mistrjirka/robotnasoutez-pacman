@@ -84,23 +84,23 @@ class TrueTurn:
 		slowLeftTurn = False
 		slowRightTurn = False
 		
-		# ~ if angle - self.GS.value() not in field:
-			# ~ while angle - self.GS.value() not in field:
-				# ~ if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
-					# ~ if not rightTurn:
-						# ~ self.M1.run_forever(speed_sp=self.speed * multiplier / 2)
-						# ~ self.M2.run_forever(speed_sp=self.speed * multiplier * -1 /2)
-						# ~ rightTurn = True
-						# ~ leftTurn = False
-						# ~ sleep(0.001)
+		if angle - self.GS.value() not in field:
+			while angle - self.GS.value() not in field:
+				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
+					if not rightTurn:
+						self.M1.run_forever(speed_sp=self.speed * multiplier / 5)
+						self.M2.run_forever(speed_sp=self.speed * multiplier * -1 /5)
+						rightTurn = True
+						leftTurn = False
+						sleep(0.001)
 				
-				# ~ if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
-					# ~ if not leftTurn:
-						# ~ self.M1.run_forever(speed_sp=self.speed * multiplier * -1 / 2)
-						# ~ self.M2.run_forever(speed_sp=self.speed * multiplier / 2)
-						# ~ rightTurn = False
-						# ~ leftTurn = True
-						# ~ sleep(0.001)
+				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
+					if not leftTurn:
+						self.M1.run_forever(speed_sp=self.speed * multiplier * -1 / 5)
+						self.M2.run_forever(speed_sp=self.speed * multiplier / 5)
+						rightTurn = False
+						leftTurn = True
+						sleep(0.001)
 		
 		self.resetValue()
 		return True
