@@ -160,12 +160,13 @@ class TrueTurn:
 		if self.stop is True:
 			self.stopMotors()
 	def measureDistanceStart(self):
-		self.time = timer()
-	def measureDistanceStop(self):
-		self.time = 0
+		self.distance = self.M1.position
 	
-	def distance(self, speed = 3.5):
-		return (timer() - self.time) / 3.5 *(self.wheelDiameter * Math.pi)
+	def distance(self, wheelDiameter = 5.5):
+		turns = (self.M1.position - self.distance) / 360
+		
+		dist = turns * wheelDiameter * math.pi
+		return dist
 	
 	def stopMotors(self):
 		self.stop = True
