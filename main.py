@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 from threading import Thread 
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [8,5], SM_sleep = 0.15, critical_distance = 20, max_map_size = [8,5], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.05, block_size = 27, starting_point = [3, 4], critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.05, straight_tolerance = 2, motor_speed = 350, motor_speed_turning = 200):
 		#this is intitial configuration
 		if GP == None: #shitty
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -23,6 +23,9 @@ class Robot():
 		self.SM = MediumMotor(SM)
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
+		
+		self.starting_point = starting_point
+		self.block_size = block_size
 		
 		self.map = self.createMap(max_map_size[0], max_map_size[1])
 		
@@ -55,6 +58,26 @@ class Robot():
 			}
 		}
 		
+		def turnRight():
+			self.TrueTurn.stopMotors()
+			self.pauseSearch()
+			sleep(0.2)
+			print("turning")
+			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.2)
+			self.resumeSearch()
+			self.mapTurn(self.map_config_array["right"])
+		
+		def turnLeft():
+			self.TrueTurn.stopMotors()
+			self.pauseSearch()
+			sleep(0.2)
+			print("turning")
+			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
+			sleep(0.2)
+			self.resumeSearch()
+			self.mapTurn(self.map_config_array["left"])
+		
 		def straight():
 			print("running")
 			if self.TrueTurn.isRunning() is not True:
@@ -64,7 +87,6 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 			sleep(0.5)
-		
 		def backward():
 			if self.TrueTurn.isRunning() is not True:
 				def do():
@@ -73,37 +95,6 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 			sleep(0.5)
-		
-		def afterTurn():
-			straight()
-			sleep(0.2)
-			self.async_return["ways"] = self.checkWay()
-			print(self.async_return["ways"])
-			self.resumeSearch()
-			sleep(0.1)
-		
-		def turnLeft():
-			self.TrueTurn.stopMotors()
-			self.pauseSearch()
-			sleep(0.2)
-			print("turning")
-			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.2)
-			self.mapTurn(self.map_config_array["right"])
-			afterTurn()
-			print ("end of turning")
-		
-		def turnRight():
-			self.TrueTurn.stopMotors()
-			self.pauseSearch()
-			
-			sleep(0.2)
-			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
-			sleep(0.2)
-			print ("turning")
-			self.mapTurn(self.map_config_array["right"])
-			afterTurn()
-			print ("end of turning")
 		
 		self.turn_counter = 0
 		
@@ -134,62 +125,62 @@ class Robot():
 			}
 		]
 		
-	
-	def sonicValue(self, tolerance = 10):
-		cache = [1,100]
-		while abs(cache[0] - cache[1]) > tolerance and not (cache[0] > self.critical_distance * 1.5 and cache[1] > self.critical_distance * 1.5):
+	def sonicValue(self, tolerance = 5):
+		cache = [1,20]
+		while abs(cache[0] - cache[1]) > tolerance:
 			cache[0] = self.US.value()/10 
-			sleep(0.025)
+			sleep(0.06)
 			cache[1] = self.US.value()/10
-			sleep(0.025)
+			sleep(0.06)
 		return sum(cache) / len(cache)
 	
 	def checkWay(self): #async function
 		data = [0,0,0]
 		# ~ print("checkway")
-		data[1] = self.sonicValue()
 		sleep(self.SM_sleep)
+		data[1] = self.sonicValue()
+		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		data[0] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=-180, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep*2)
+		sleep(self.SM_sleep)
 		data[2] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep/1.5)
+		sleep(self.SM_sleep)
 		# ~ print("result")
 		# ~ print(data)
 		return data
 	
 	def cycle(self): #main function
-		self.async_return["ways"] = self.checkWay()
-		print("start")
-		self.asyncWayCheck("ways")
-		print("after waycheck")
-		
 		while True:
-			print("loop")
-			print(self.async_return["ways"])
-			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
-			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			# ~ print("options")
-			# ~ print(options)
-			todo = self.decisionMaking(options)
-			print(todo)
-			todo["do"]()
-			print("endofloop")
+			print("start")
+			value = self.sonicValue()
+			print(value)
+			if value <= self.critical_distance:
+				print("prekazka")
+				self.TrueTurn.stopMotors()
+				sleep(0.1)
+				options = self.ArrayIndexCheck(self.arrayCheck(self.checkWay(), self.critical_distance), True)
+				todo = self.decisionMaking(options)
+				todo["do"]()
+			else:
+				for x in self.config_array:
+					if x["index"] is 1:
+						x["do"]()
+					
 			
 	
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
 		if not inverted:
 			for i in array:
-				data.append(i >= value)
+				data.append(i > value)
 		else:
 			for i in array:
-				data.append(not(i >= value))
+				data.append(not(i > value))
 		return data
 	
 	def returnConfigArray(self):
@@ -208,7 +199,7 @@ class Robot():
 				if self.pause_way_check is not True:
 					self.async_return[id_for_return] = self.checkWay()
 				else:
-					sleep(0.1)
+					sleep(0.2)
 		t = Thread(target=checkWayAsync)
 		t.start()
 	
@@ -259,10 +250,10 @@ class Robot():
 		self.to_do_mapping = event
 	
 	def asyncMapping(self):
-		pass
+		self.map
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 20.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 30)
 	def runProgram():
 		Main.cycle()
 		
