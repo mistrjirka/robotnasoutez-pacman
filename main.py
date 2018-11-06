@@ -122,7 +122,6 @@ class Robot():
 			}
 		]
 		
-	
 	def sonicValue(self, tolerance = 5):
 		cache = [1,20]
 		while abs(cache[0] - cache[1]) > tolerance:
