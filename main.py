@@ -5,7 +5,7 @@ from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, S
 from threading import Thread 
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [3,4], SM_sleep = 0.15, critical_distance = 20, max_map_size = [8,5], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [3,4], SM_sleep = 0.15, critical_distance = 20, max_map_size = [8,5], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -23,6 +23,8 @@ class Robot():
 		self.SM = MediumMotor(SM)
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
+		
+		self.block_size = block_size
 		
 		self.map = self.createMap(max_map_size[0], max_map_size[1])
 		
@@ -298,7 +300,9 @@ class Robot():
 					if ways[0] or ways[2]:
 						distance = self.TrueTurn.distance()
 						
-						blocks = Math.floor(distance / self.block 
+						blocks = Math.floor(distance / self.block_size)
+						
+						
 					
 		t = Thread(target=mapping)
 		t.start()
@@ -310,7 +314,7 @@ class Robot():
 		self.pause_mapping = True
 	
 	def resumeMapping(self):
-		self.pause_mapping = True
+		self.pause_mapping = False
 	
 
 if __name__ == "__main__":
