@@ -7,12 +7,12 @@ from threading import Thread
 class Robot():
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [8,5], SM_sleep = 0.15, critical_distance = 20, max_map_size = [8,5], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100):
 		#this is intitial configuration
-		if GP == None: #shitty
+		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
 		else:
 			self.TrueTurn = TrueTurn(mot1, mot2, GP)
 		
-		if US == None: #shitty
+		if US == None:
 			self.US = UltrasonicSensor()
 		else:
 			self.US = UltrasonicSensor(US)
@@ -42,7 +42,11 @@ class Robot():
 		
 		self.pause_way_check = False
 		
-		self.to_do_mapping = None
+		self.map_direction = 1 # 1 is up ("default"); 2 is right; 3 is down; 4 is left
+		
+		self.stop_mapping = False
+		
+		self.pause_mapping = False
 		
 		self.map_config_array = {
 			"right": {
@@ -52,6 +56,25 @@ class Robot():
 			"left": {
 				"deg": -90,
 				"axis": -1
+			}
+		}
+		
+		
+		self.map_legend = {
+			"robot": {
+				"name": "robot",
+				"free": True,
+				"todo": False
+			},
+			"done": {
+				"name": "done",
+				"free": True,
+				"todo": False
+			},
+			"todo": {
+				"name": "todo",
+				"free": True,
+				"todo": True
 			}
 		}
 		
@@ -259,7 +282,28 @@ class Robot():
 		self.to_do_mapping = event
 	
 	def asyncMapping(self):
-		pass
+		self.stop_mapping = False
+		self.pause_mapping = False
+		
+		def mapping():
+			while not self.stop_mapping:
+				if pause_mapping:
+					sleep(0.05)
+				else:
+					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
+					
+		t = Thread(target=mapping)
+		t.start()
+	
+	def stopMapping(self):
+		self.stop_mapping = True
+	
+	def pauseMapping(self):
+		self.pause_mapping = True
+	
+	def resumeMapping(self):
+		self.pause_mapping = True
+	
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB", critical_distance = 20.5)
