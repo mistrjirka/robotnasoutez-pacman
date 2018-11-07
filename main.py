@@ -284,13 +284,15 @@ class Robot():
 	def asyncMapping(self):
 		self.stop_mapping = False
 		self.pause_mapping = False
+		distance = 0
 		
 		def mapping():
 			while not self.stop_mapping:
 				if pause_mapping:
-					sleep(0.05)
+					sleep(0.07)
 				else:
 					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
+					
 					
 		t = Thread(target=mapping)
 		t.start()
