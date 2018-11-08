@@ -378,7 +378,7 @@ class Robot():
 					if ways[0]: #left
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
-						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
+						if self.map[x][y]["name"] != "done" and x < len(self.map.length) and y < len(self.map[0]):
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
@@ -390,7 +390,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
+						if self.map[x][y]["name"] != "done" and x < len(self.map.length) and y < len(self.map[0]):
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
@@ -403,7 +403,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
+						if self.map[x][y]["name"] != "done" and x < len(self.map.length) and y < len(self.map[0]):
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
