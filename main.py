@@ -149,23 +149,26 @@ class Robot():
 		def turnLeft():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
+			self.pauseMapping()
 			sleep(0.2)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.mapTurn(self.map_config_array[1])
+			self.resumeMapping()
 			afterTurn()
 			print ("end of turning")
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
-			
+			self.pauseMapping()
 			sleep(0.2)
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			print ("turning")
 			self.mapTurn(self.map_config_array[0])
+			self.resumeMapping()
 			afterTurn()
 			print ("end of turning")
 		
@@ -417,7 +420,7 @@ class Robot():
 					fh.write(stringify(self.map))
 					fh.close()
 					
-					sleep(0.6)
+					sleep(0.2)
 				
 				
 		t = Thread(target=mapping)
