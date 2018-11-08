@@ -25,6 +25,8 @@ class Robot():
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
 		
+		self.position = starting_point
+		
 		self.block_size = block_size
 		
 		self.map = self.createMap(max_map_size[0], max_map_size[1])
@@ -58,18 +60,18 @@ class Robot():
 		self.map_direction_definitions = [
 			{
 				"x": 0,
-				"y": 1
+				"y": -1
 			},
 			{
-				"x": 1,
+				"x": -1,
 				"y": 0
 			},
 			{
 				"x": 0,
-				"y": -1 
+				"y": 1 
 			},
 			{
-				"x": -1,
+				"x": 1,
 				"y": 0
 			}
 		]
@@ -317,6 +319,7 @@ class Robot():
 	def mapTurn(self, event):
 		self.direction = self.directionCorrection(self.direction + event["axis"])
 		self.TrueTurn.measureDistanceStart()
+		self.measuring_position = self.position
 		
 	def asyncMapping(self):
 		self.stop_mapping = False
@@ -352,6 +355,8 @@ class Robot():
 						y += self.map_direction_definitions[direction]["y"] * blocks
 					
 					position = [x, y]
+					
+					self.position = position
 					
 					print ("mapping")
 					
