@@ -147,7 +147,7 @@ class Robot():
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
-			# ~ self.mapTurn(self.map_config_array["right"])
+			self.mapTurn(self.map_config_array[1])
 			afterTurn()
 			print ("end of turning")
 		
@@ -159,7 +159,7 @@ class Robot():
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			print ("turning")
-			# ~ self.mapTurn(self.map_config_array["right"])
+			self.mapTurn(self.map_config_array[0])
 			afterTurn()
 			print ("end of turning")
 		
@@ -315,8 +315,9 @@ class Robot():
 		return cache
 		
 	def mapTurn(self, event):
-		self.to_do_mapping = event
-	
+		self.direction = self.directionCorrection(self.direction + event["axis"])
+		self.TrueTurn.measureDistanceStart()
+		
 	def asyncMapping(self):
 		self.stop_mapping = False
 		self.pause_mapping = False
