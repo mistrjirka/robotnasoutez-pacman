@@ -4,6 +4,7 @@ from time import sleep
 from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
 from threading import Thread 
 import math
+from json import dumps as stringify
 
 class Robot():
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [4,2], SM_sleep = 0.15, critical_distance = 20, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
@@ -413,7 +414,7 @@ class Robot():
 					print(self.map)
 					
 					fh = open("/var/www/html/map.txt","w")
-					fh.write(self.map)
+					fh.write(stringify(self.map))
 					fh.close()
 					
 					sleep(0.6)
