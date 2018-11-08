@@ -1,0 +1,853 @@
+ready to start
+start
+after waycheck
+loop
+[48.099999999999994, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[48.099999999999994, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[151.2, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[151.2, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[47.25, 203.15, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[47.25, 203.15, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[47.2, 200.5, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[48.25, 255.0, 132.4]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[48.25, 255.0, 132.4]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[49.45, 223.7, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[49.45, 223.7, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[52.15, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[52.15, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[64.9, 139.5, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[32.6, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[32.6, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[71.2, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[71.2, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[55.0, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[55.0, 255.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[57.650000000000006, 189.5, 118.7]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[54.599999999999994, 188.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[54.599999999999994, 188.0, 255.0]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[86.4, 102.15, 117.3]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+endofloop
+loop
+[86.4, 102.15, 117.3]
+[True, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[19.7, 97.95, 120.1]
+[False, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[19.7, 97.95, 120.1]
+[False, True, True]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[255.0, 100.75, 19.9]
+[True, True, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[255.0, 100.75, 19.9]
+[True, True, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[32.6, 98.1, 15.75]
+[True, True, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[65.2, 83.5, 8.15]
+[True, True, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[65.2, 83.5, 8.15]
+[True, True, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+running
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'todo', 'free': True, 'todo': True}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+endofloop
+loop
+[38.35, 8.4, 12.149999999999999]
+[True, False, False]
+True
+True
+True
+{'index': 1, 'do': <function Robot.__init__.<locals>.straight at 0xb6a01a98>, 'type': 0, 'deg': 0}
+{'index': 0, 'do': <function Robot.__init__.<locals>.turnRight at 0xb68797c8>, 'type': -1, 'deg': 90}
+{'index': 0, 'do': <function Robot.__init__.<locals>.turnRight at 0xb68797c8>, 'type': -1, 'deg': 90}
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+minor
+-82
+minor
+-83
+minor
+-83
+minor
+-83
+minor
+-83
+minor
+-87
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+minor
+-87
+minor
+-88
+minor
+-89
+minor
+-90
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+turning
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
+3
+3
+map
+[['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty'], ['empty', 'empty', 'empty', 'empty', 'empty', {'name': 'blocked', 'free': False, 'todo': False}, 'empty', 'empty']]
