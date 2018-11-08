@@ -62,11 +62,11 @@ class Robot():
 				"y": 0
 			},
 			{
-				"x": 0
+				"x": 0,
 				"y": -1 
 			},
 			{
-				"x": -1
+				"x": -1,
 				"y": 0
 			}
 		]
@@ -322,14 +322,14 @@ class Robot():
 						correctedDirection += direction - 4
 					
 					if direction < 0:
-						correctedDirection = 3
-						correctedDirection -= direction
+						correctedDirection = 4
+						correctedDirection += direction
 					return correctedDirection
 				
 				while finalDirection > 3 or finalDirection < 0:
 					finalDirection = correcting(finalDirection)
 					print(finalDirection) #debug
-					
+				
 				return finalDirection
 			while not self.stop_mapping:
 				if pause_mapping:
