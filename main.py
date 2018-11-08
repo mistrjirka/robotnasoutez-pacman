@@ -317,7 +317,7 @@ class Robot():
 		return cache
 		
 	def mapTurn(self, event):
-		self.direction = self.directionCorrection(self.direction + event["axis"])
+		self.map_direction = self.directionCorrection(self.map_direction + event["axis"])
 		self.TrueTurn.measureDistanceStart()
 		self.measuring_position = self.position
 		
