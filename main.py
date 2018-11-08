@@ -3,6 +3,7 @@ from trueturn import TrueTurn
 from time import sleep
 from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
 from threading import Thread 
+import math
 
 class Robot():
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [3,4], SM_sleep = 0.15, critical_distance = 20, max_map_size = [8,5], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):

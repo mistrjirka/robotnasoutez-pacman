@@ -4,6 +4,7 @@ from ev3dev.ev3 import GyroSensor, LargeMotor
 from time import sleep
 import math
 from timeit import default_timer as timer
+
 class TrueTurn:
 	def __init__(self, motor1Port, motor2Port, gyroPort=None, wheelDiameter=None): #init
 		if GyroSensor != None:
