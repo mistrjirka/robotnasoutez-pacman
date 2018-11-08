@@ -340,6 +340,16 @@ class Robot():
 
 					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
 					
+					print ("mapping")
+					
+					print(direction)
+					
+					print(distance)
+					
+					print (blocks)
+					print (measuringPoint)
+					print (position)
+					
 					if ways[0]: #left
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
