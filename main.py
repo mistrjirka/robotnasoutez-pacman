@@ -51,6 +51,8 @@ class Robot():
 		
 		self.pause_mapping = False
 		
+		self.starting_point = starting_point
+		
 		self.measuring_position = starting_point
 		
 		self.map_direction_definitions = [
@@ -305,9 +307,9 @@ class Robot():
 	
 	def createMap(self, x, y):
 		cache = []
-		for i in range (0,y):
+		for i in range (0,x):
 			cache.append([])
-			for j in range (0, x):
+			for j in range (0, y):
 				cache[i].append("empty")
 				
 		return cache
