@@ -315,6 +315,7 @@ class Robot():
 		for i in range (0,x):
 			cache.append([])
 			for j in range (0, y):
+				print (self)
 				cache[i].append({"name": "empty"})
 				
 		return cache
@@ -377,7 +378,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
 						print(self.map[x][y])
-						if self.map[x][y].name != "done":
+						if self.map[x][y]["name"] != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
@@ -389,7 +390,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y].name != "done":
+						if self.map[x][y]["name"] != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
@@ -401,7 +402,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 						
-						if self.map[x][y].name != "done":
+						if self.map[x][y]["name"] != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
