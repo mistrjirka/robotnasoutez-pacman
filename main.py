@@ -315,7 +315,7 @@ class Robot():
 		for i in range (0,x):
 			cache.append([])
 			for j in range (0, y):
-				cache[i].append("empty":{"name": "empty"})
+				cache[i].append({"name": "empty"})
 				
 		return cache
 		
