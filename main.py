@@ -319,7 +319,7 @@ class Robot():
 					correctedDirection = 0
 					if direction > 3:
 						correctedDirection = 0
-						correctedDirection += direction - 3
+						correctedDirection += direction - 4
 					
 					if direction < 0:
 						correctedDirection = 3
@@ -330,7 +330,7 @@ class Robot():
 					finalDirection = correcting(finalDirection)
 					print(finalDirection) #debug
 					
-				
+				return finalDirection
 			while not self.stop_mapping:
 				if pause_mapping:
 					sleep(0.07)
