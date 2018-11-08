@@ -224,6 +224,8 @@ class Robot():
 		self.asyncWayCheck("ways")
 		print("after waycheck")
 		
+		self.asyncMapping()
+		
 		while True:
 			print("loop")
 			print(self.async_return["ways"])
