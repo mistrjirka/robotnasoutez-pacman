@@ -384,7 +384,7 @@ class Robot():
 		t.start()
 	
 	
-	def directionCorrection(direction):
+	def directionCorrection(self, direction):
 		finalDirection = direction
 		
 		def correcting(direction):
