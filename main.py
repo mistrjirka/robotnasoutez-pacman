@@ -413,7 +413,7 @@ class Robot():
 					print(self.map)
 					
 					fh = open("/var/www/html/map.txt","w")
-					write(self.map)
+					fh.write(self.map)
 					fh.close()
 					
 					sleep(0.6)
