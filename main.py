@@ -333,7 +333,7 @@ class Robot():
 					
 					distance = self.TrueTurn.measureDistance()
 					
-					blocks = Math.floor(distance / self.block_size)
+					blocks = math.floor(distance / self.block_size)
 					
 					measuringPoint = self.measuring_position
 					pause
