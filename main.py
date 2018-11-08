@@ -337,8 +337,18 @@ class Robot():
 					blocks = math.floor(distance / self.block_size)
 					
 					measuringPoint = self.measuring_position
-
-					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
+					
+					x = measuringPoint[0]
+					
+					if self.map_direction_definitions[direction]["x"] != 0:
+						x += self.map_direction_definitions[direction]["x"] * blocks
+					
+					y = measuringPoint[1]
+					
+					if self.map_direction_definitions[direction]["y"] != 0:
+						y = self.map_direction_definitions[direction]["y"] * blocks
+					
+					position = [x, measuringPoint[1] + ]
 					
 					print ("mapping")
 					
