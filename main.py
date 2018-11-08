@@ -79,6 +79,10 @@ class Robot():
 			{
 				"deg": -90,
 				"axis": -1
+			},
+			{
+				"deg": 0,
+				"axis": 0
 			}
 		]
 		
@@ -98,6 +102,11 @@ class Robot():
 				"name": "todo",
 				"free": True,
 				"todo": True
+			},
+			"blocked": {
+				"name": "blocked",
+				"free": False,
+				"todo": False
 			}
 		}
 		
@@ -328,10 +337,46 @@ class Robot():
 					
 					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
 					
-					if ways[0]:
+					if ways[0]: #left
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						self.map[position[0] + self.map_direction_definitions[direction]["x"], position[1] + self.map_direction_definitions[direction]["y"]]
+						if self.map[x,y] == "empty":
+							self.map[x,y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+						
+						self.map[x,y] = self.map_legend["blocked"]
 					
+					if ways[2]: #right
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						
+						if self.map[x,y] == "empty":
+							self.map[x,y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						
+						self.map[x,y] = self.map_legend["blocked"]
+						
+					if ways[1]: #straight
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						
+						if self.map[x,y] == "empty":
+							self.map[x,y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						
+						self.map[x,y] = self.map_legend["blocked"]
+					print("map")
+					print(self.map)
+					sleep(0.2)
+				
+				
 		t = Thread(target=mapping)
 		t.start()
 	
