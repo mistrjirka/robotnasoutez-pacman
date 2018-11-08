@@ -145,7 +145,7 @@ class Robot():
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
-			self.mapTurn(self.map_config_array["right"])
+			# ~ self.mapTurn(self.map_config_array["right"])
 			afterTurn()
 			print ("end of turning")
 		
@@ -157,7 +157,7 @@ class Robot():
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			print ("turning")
-			self.mapTurn(self.map_config_array["right"])
+			# ~ self.mapTurn(self.map_config_array["right"])
 			afterTurn()
 			print ("end of turning")
 		
