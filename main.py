@@ -324,7 +324,7 @@ class Robot():
 		def mapping():
 			
 			while not self.stop_mapping:
-				if pause_mapping:
+				if self.pause_mapping:
 					sleep(0.07)
 				else:
 					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
@@ -336,7 +336,7 @@ class Robot():
 					blocks = Math.floor(distance / self.block_size)
 					
 					measuringPoint = self.measuring_position
-					
+					pause
 					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
 					
 					if ways[0]: #left
