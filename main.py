@@ -337,7 +337,7 @@ class Robot():
 					blocks = math.floor(distance / self.block_size)
 					
 					measuringPoint = self.measuring_position
-					pause
+
 					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
 					
 					if ways[0]: #left
