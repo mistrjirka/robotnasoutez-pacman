@@ -410,6 +410,11 @@ class Robot():
 						self.map[x][y] = self.map_legend["blocked"]
 					print("map")
 					print(self.map)
+					
+					fh = open("/var/www/html/map.txt","w")
+					write(self.map)
+					fh.close()
+					
 					sleep(0.6)
 				
 				
