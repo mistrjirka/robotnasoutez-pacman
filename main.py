@@ -360,6 +360,8 @@ class Robot():
 					print (measuringPoint)
 					print (position)
 					
+					self.map[position[0]][position[1]]
+					
 					if ways[0]: #left
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
