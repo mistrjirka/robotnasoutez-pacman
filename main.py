@@ -44,22 +44,43 @@ class Robot():
 		
 		self.pause_way_check = False
 		
-		self.map_direction = 1 # 1 is up ("default"); 2 is right; 3 is down; 4 is left
+		self.map_direction = 0 # 0 is up (default position); 1 is right; 2 is down; 3 is left
 		
 		self.stop_mapping = False
 		
 		self.pause_mapping = False
 		
-		self.map_config_array = {
-			"right": {
+		self.measuring_position = starting_point
+		
+		self.map_direction_definitions = [
+			{
+				"x": 0,
+				"y": 1
+			},
+			{
+				"x": 1,
+				"y": 0
+			},
+			{
+				"x": 0
+				"y": -1 
+			},
+			{
+				"x": -1
+				"y": 0
+			}
+		]
+		
+		self.map_config_array = [
+			{
 				"deg": 90,
 				"axis": 1
 			},
-			"left": {
+			{
 				"deg": -90,
 				"axis": -1
 			}
-		}
+		]
 		
 		
 		self.map_legend = {
@@ -224,7 +245,6 @@ class Robot():
 		self.config_array = array
 	
 	def asyncWayCheck(self, id_for_return):
-		
 		def checkWayAsync():
 			self.stop_way_check = False
 			while True:
@@ -247,7 +267,7 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self, options): #todo wierd
+	def decisionMaking(self, options):  #todo some very smart algorithm that will be using map
 		for x in self.config_array:
 			print (x)
 			if x["index"] in options:
@@ -291,18 +311,45 @@ class Robot():
 		self.TrueTurn.measureDistanceStart()
 		
 		def mapping():
+			
+			def directionCorrection(direction):
+				finalDirection = direction
+				
+				def correcting(direction):
+					correctedDirection = 0
+					if direction > 3:
+						correctedDirection = 0
+						correctedDirection += direction - 3
+					
+					if direction < 0:
+						correctedDirection = 3
+						correctedDirection -= direction
+					return correctedDirection
+				
+				while finalDirection > 3 or finalDirection < 0:
+					finalDirection = correcting(finalDirection)
+					print(finalDirection) #debug
+					
+				
 			while not self.stop_mapping:
 				if pause_mapping:
 					sleep(0.07)
 				else:
 					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
 					
-					if ways[0] or ways[2]:
-						distance = self.TrueTurn.distance()
+					direction = self.map_direction
+					
+					distance = self.TrueTurn.distance()
+					
+					blocks = Math.floor(distance / self.block_size)
+					
+					measuringPoint = self.measuring_position
+					
+					position = [measuringPoint[0] + self.map_direction_definitions[direction]["x"], measuringPoint[1] + self.map_direction_definitions[direction]["y"]]
+					
+					if ways[0]:
 						
-						blocks = Math.floor(distance / self.block_size)
-						
-						
+						self.map[position[0] + self.map_direction_definitions[direction]["x"], position[1] + self.map_direction_definitions[direction]["y"]]
 					
 		t = Thread(target=mapping)
 		t.start()
