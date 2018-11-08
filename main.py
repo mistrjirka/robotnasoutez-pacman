@@ -312,25 +312,6 @@ class Robot():
 		
 		def mapping():
 			
-			def directionCorrection(direction):
-				finalDirection = direction
-				
-				def correcting(direction):
-					correctedDirection = 0
-					if direction > 3:
-						correctedDirection = 0
-						correctedDirection += direction - 4
-					
-					if direction < 0:
-						correctedDirection = 4
-						correctedDirection += direction
-					return correctedDirection
-				
-				while finalDirection > 3 or finalDirection < 0:
-					finalDirection = correcting(finalDirection)
-					print(finalDirection) #debug
-				
-				return finalDirection
 			while not self.stop_mapping:
 				if pause_mapping:
 					sleep(0.07)
@@ -353,6 +334,27 @@ class Robot():
 					
 		t = Thread(target=mapping)
 		t.start()
+	
+	
+	def directionCorrection(direction):
+		finalDirection = direction
+		
+		def correcting(direction):
+			correctedDirection = 0
+			if direction > 3:
+				correctedDirection = 0
+				correctedDirection += direction - 4
+			
+			if direction < 0:
+				correctedDirection = 4
+				correctedDirection += direction
+			return correctedDirection
+		
+		while finalDirection > 3 or finalDirection < 0:
+			finalDirection = correcting(finalDirection)
+			print(finalDirection) #debug
+		
+		return finalDirection
 	
 	def stopMapping(self):
 		self.stop_mapping = True
