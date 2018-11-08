@@ -64,7 +64,7 @@ class Robot():
 				"y": 1
 			},
 			{
-				"x": 1,
+				"x": -1,
 				"y": 0
 			},
 			{
@@ -72,7 +72,7 @@ class Robot():
 				"y": -1 
 			},
 			{
-				"x": -1,
+				"x": 1,
 				"y": 0
 			}
 		]
@@ -378,8 +378,7 @@ class Robot():
 					if ways[0]: #left
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
-						print(self.map[x][y])
-						if self.map[x][y]["name"] != "done":
+						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
@@ -391,7 +390,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done":
+						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
@@ -403,7 +402,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done":
+						if self.map[x][y]["name"] != "done" and x < self.map.length and y < self.map[0].length:
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
