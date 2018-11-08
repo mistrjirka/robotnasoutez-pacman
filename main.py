@@ -331,7 +331,7 @@ class Robot():
 					
 					direction = self.map_direction
 					
-					distance = self.TrueTurn.distance()
+					distance = self.TrueTurn.measureDistance()
 					
 					blocks = Math.floor(distance / self.block_size)
 					
