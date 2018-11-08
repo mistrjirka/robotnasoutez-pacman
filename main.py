@@ -340,7 +340,8 @@ class Robot():
 			
 			while not self.stop_mapping:
 				if self.pause_mapping:
-					sleep(0.07)
+					sleep(0.1)
+					print("pasue")
 				else:
 					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
 					
