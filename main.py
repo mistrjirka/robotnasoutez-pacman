@@ -112,6 +112,9 @@ class Robot():
 				"name": "blocked",
 				"free": False,
 				"todo": False
+			},
+			"empty":{
+				"name": "empty"
 			}
 		}
 		
@@ -312,7 +315,7 @@ class Robot():
 		for i in range (0,x):
 			cache.append([])
 			for j in range (0, y):
-				cache[i].append("empty")
+				cache[i].append(self.map_legend["empty"])
 				
 		return cache
 		
@@ -374,7 +377,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
 						
-						if self.map[x][y] == "empty":
+						if self.map[x][y].name != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
@@ -386,7 +389,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y] == "empty":
+						if self.map[x][y].name != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
@@ -398,7 +401,7 @@ class Robot():
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 						
-						if self.map[x][y] == "empty":
+						if self.map[x][y].name != "done":
 							self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
