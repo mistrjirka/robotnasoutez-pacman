@@ -346,7 +346,7 @@ class Robot():
 					y = measuringPoint[1]
 					
 					if self.map_direction_definitions[direction]["y"] != 0:
-						y = self.map_direction_definitions[direction]["y"] * blocks
+						y += self.map_direction_definitions[direction]["y"] * blocks
 					
 					position = [x, y]
 					
