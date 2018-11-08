@@ -348,7 +348,7 @@ class Robot():
 					if self.map_direction_definitions[direction]["y"] != 0:
 						y = self.map_direction_definitions[direction]["y"] * blocks
 					
-					position = [x, measuringPoint[1] + ]
+					position = [x, y]
 					
 					print ("mapping")
 					
@@ -397,7 +397,7 @@ class Robot():
 						self.map[x][y] = self.map_legend["blocked"]
 					print("map")
 					print(self.map)
-					sleep(0.2)
+					sleep(0.6)
 				
 				
 		t = Thread(target=mapping)
