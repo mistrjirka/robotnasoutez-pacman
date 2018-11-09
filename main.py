@@ -3,16 +3,22 @@ from trueturn import TrueTurn
 from time import sleep
 from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
 from threading import Thread 
+import math
+from json import dumps as stringify
 
 class Robot():
+<<<<<<< HEAD
 	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, SM_sleep = 0.15, critical_distance = 20, max_map_size = [20,20], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 160, motor_speed_turning = 100):
+=======
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [4,2], SM_sleep = 0.15, critical_distance = 20, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
+>>>>>>> bd04d031d9e9cbc4ba40b6ec07eeee0453219ef3
 		#this is intitial configuration
-		if GP == None: #shitty
+		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
 		else:
 			self.TrueTurn = TrueTurn(mot1, mot2, GP)
 		
-		if US == None: #shitty
+		if US == None:
 			self.US = UltrasonicSensor()
 		else:
 			self.US = UltrasonicSensor(US)
@@ -23,6 +29,10 @@ class Robot():
 		self.SM = MediumMotor(SM)
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
+		
+		self.position = starting_point
+		
+		self.block_size = block_size
 		
 		self.map = self.createMap(max_map_size[0], max_map_size[1])
 		
@@ -42,16 +52,74 @@ class Robot():
 		
 		self.pause_way_check = False
 		
-		self.to_do_mapping = None
+		self.map_direction = 0 # 0 is up (default position); 1 is right; 2 is down; 3 is left
 		
-		self.map_config_array = {
-			"right": {
+		self.stop_mapping = False
+		
+		self.pause_mapping = False
+		
+		self.starting_point = starting_point
+		
+		self.measuring_position = starting_point
+		
+		self.map_direction_definitions = [
+			{
+				"x": 0,
+				"y": 1
+			},
+			{
+				"x": -1,
+				"y": 0
+			},
+			{
+				"x": 0,
+				"y": -1 
+			},
+			{
+				"x": 1,
+				"y": 0
+			}
+		]
+		
+		self.map_config_array = [
+			{
 				"deg": 90,
 				"axis": 1
 			},
-			"left": {
+			{
 				"deg": -90,
 				"axis": -1
+			},
+			{
+				"deg": 0,
+				"axis": 0
+			}
+		]
+		
+		
+		self.map_legend = {
+			"robot": {
+				"name": "robot",
+				"free": True,
+				"todo": False
+			},
+			"done": {
+				"name": "done",
+				"free": True,
+				"todo": False
+			},
+			"todo": {
+				"name": "todo",
+				"free": True,
+				"todo": True
+			},
+			"blocked": {
+				"name": "blocked",
+				"free": False,
+				"todo": False
+			},
+			"empty":{
+				"name": "empty"
 			}
 		}
 		
@@ -85,23 +153,26 @@ class Robot():
 		def turnLeft():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
+			self.pauseMapping()
 			sleep(0.2)
 			print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
-			self.mapTurn(self.map_config_array["right"])
+			self.mapTurn(self.map_config_array[1])
+			self.resumeMapping()
 			afterTurn()
 			print ("end of turning")
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
 			self.pauseSearch()
-			
+			self.pauseMapping()
 			sleep(0.2)
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			print ("turning")
-			self.mapTurn(self.map_config_array["right"])
+			self.mapTurn(self.map_config_array[0])
+			self.resumeMapping()
 			afterTurn()
 			print ("end of turning")
 		
@@ -169,6 +240,8 @@ class Robot():
 		self.asyncWayCheck("ways")
 		print("after waycheck")
 		
+		self.asyncMapping()
+		
 		while True:
 			print("loop")
 			print(self.async_return["ways"])
@@ -199,7 +272,6 @@ class Robot():
 		self.config_array = array
 	
 	def asyncWayCheck(self, id_for_return):
-		
 		def checkWayAsync():
 			self.stop_way_check = False
 			while True:
@@ -222,7 +294,7 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self, options): #todo wierd
+	def decisionMaking(self, options):  #todo some very smart algorithm that will be using map
 		for x in self.config_array:
 			print (x)
 			if x["index"] in options:
@@ -248,21 +320,150 @@ class Robot():
 	
 	def createMap(self, x, y):
 		cache = []
-		for i in range (0,y):
+		for i in range (0,x):
 			cache.append([])
-			for j in range (0, x):
-				cache[i].append("empty")
+			for j in range (0, y):
+				print (self)
+				cache[i].append({"name": "empty"})
 				
 		return cache
 		
 	def mapTurn(self, event):
-		self.to_do_mapping = event
-	
+		self.map_direction = self.directionCorrection(self.map_direction + event["axis"])
+		self.TrueTurn.measureDistanceStart()
+		self.measuring_position = self.position
+		
 	def asyncMapping(self):
-		pass
+		self.stop_mapping = False
+		self.pause_mapping = False
+		distance = 0
+		
+		self.TrueTurn.measureDistanceStart()
+		
+		def mapping():
+			
+			while not self.stop_mapping:
+				if self.pause_mapping:
+					sleep(0.1)
+					print("pasue")
+				else:
+					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
+					
+					direction = self.map_direction
+					
+					distance = self.TrueTurn.measureDistance()
+					
+					blocks = math.floor(distance / self.block_size)
+					
+					measuringPoint = self.measuring_position
+					
+					x = measuringPoint[0]
+					
+					if self.map_direction_definitions[direction]["x"] != 0:
+						x += self.map_direction_definitions[direction]["x"] * blocks
+					
+					y = measuringPoint[1]
+					
+					if self.map_direction_definitions[direction]["y"] != 0:
+						y += self.map_direction_definitions[direction]["y"] * blocks
+					
+					position = [x, y]
+					
+					self.position = position
+					
+					print ("mapping")
+					
+					print(direction)
+					
+					print(distance)
+					
+					print (blocks)
+					print (measuringPoint)
+					print (position)
+					
+					self.map[position[0]][position[1]] = self.map[x][y] = self.map_legend["done"]
+					
+					if ways[0]: #left
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
+							self.map[x][y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						if self.map[x][y]["name"] != "done":
+							self.map[x][y] = self.map_legend["blocked"]
+					
+					if ways[2]: #right
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+						
+						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
+							self.map[x][y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+						
+						if self.map[x][y]["name"] != "done":
+							self.map[x][y] = self.map_legend["blocked"]
+						
+					if ways[1]: #straight
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						
+						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
+							self.map[x][y] = self.map_legend["todo"]
+					else:
+						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
+						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						if self.map[x][y]["name"] != "done":
+							self.map[x][y] = self.map_legend["blocked"]
+					print("map")
+					print(self.map)
+					
+					fh = open("/var/www/html/map.txt","w")
+					fh.write(stringify(self.map))
+					fh.close()
+					
+					sleep(0.2)
+				
+				
+		t = Thread(target=mapping)
+		t.start()
+	
+	
+	def directionCorrection(self, direction):
+		finalDirection = direction
+		
+		def correcting(direction):
+			correctedDirection = 0
+			if direction > 3:
+				correctedDirection = 0
+				correctedDirection += direction - 4
+			
+			if direction < 0:
+				correctedDirection = 4
+				correctedDirection += direction
+			return correctedDirection
+		
+		while finalDirection > 3 or finalDirection < 0:
+			finalDirection = correcting(finalDirection)
+			print(finalDirection) #debug
+		
+		return finalDirection
+	
+	def stopMapping(self):
+		self.stop_mapping = True
+	
+	def pauseMapping(self):
+		self.pause_mapping = True
+	
+	def resumeMapping(self):
+		self.pause_mapping = False
+	
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 20.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 30.5)
 	def runProgram():
 		Main.cycle()
 		
