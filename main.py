@@ -241,11 +241,10 @@ class Robot():
 		while True:
 			print("loop")
 			print(self.async_return["ways"])
-			print(self.arrayCheck(self.async_return["ways"], self.critical_distance))
-			options = self.ArrayIndexCheck(self.arrayCheck(self.async_return["ways"], self.critical_distance), True)
-			# ~ print("options")
-			# ~ print(options)
-			todo = self.decisionMaking(options)
+			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
+			options = self.ArrayIndexCheck(simplified, True)
+			print (simplified)
+			todo = self.decisionMaking(options, simplified)
 			print(todo)
 			todo["do"]()
 			print("endofloop")
@@ -290,9 +289,10 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self, options):  #todo some very smart algorithm that will be using map
+	def decisionMaking(self, options, ways):  #todo some very smart algorithm that will be using map
+		
+		
 		for x in self.config_array:
-			print (x)
 			if x["index"] in options:
 				return x
 		
@@ -380,43 +380,49 @@ class Robot():
 					self.map[position[0]][position[1]] = self.map[x][y] = self.map_legend["done"]
 					
 					if ways[0]: #left
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						cal = self.calLeft(position, direction)
+						x = cal[0]
+						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
 					else:
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+						cal = self.calLeft(position, direction)
+						x = cal[0]
+						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					
 					if ways[2]: #right
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+						cal = self.calRight(position, direction)
+						x = cal[0]
+						y = cal[1]
 						
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					else:
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+						cal = self.calRight(position, direction)
+						x = cal[0]
+						y = cal[1]
 						
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 						
 					if ways[1]: #straight
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						cal = self.calStraight(position, direction)
+						x = cal[0]
+						y = cal[1]
 						
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
 					else:
-						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
-						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+						cal = self.calStraight(position, direction)
+						x = cal[0]
+						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -433,6 +439,24 @@ class Robot():
 		t = Thread(target=mapping)
 		t.start()
 	
+	
+	def calLeft(self, position, direction):
+		return [
+			position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"], 
+			position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
+		]
+	
+	def calRight(self, position, direction):
+		return [
+			position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"],
+			position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
+		]
+	
+	def calStraight(self, position, direction):
+		return [
+			position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
+			position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+		]
 	
 	def directionCorrection(self, direction):
 		finalDirection = direction
