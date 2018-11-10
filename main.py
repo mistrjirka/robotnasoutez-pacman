@@ -381,6 +381,10 @@ class Robot():
 					
 					if ways[0]: #left
 						cal = self.calLeft(position, direction)
+						print("left")
+						print(cal)
+						print("from")
+						print(position)
 						x = cal[0]
 						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]):
@@ -390,6 +394,10 @@ class Robot():
 						cal = self.calLeft(position, direction)
 						x = cal[0]
 						y = cal[1]
+						print("left")
+						print(cal)
+						print("from")
+						print(position)
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -398,7 +406,10 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						
+						print("right")
+						print(cal)
+						print("from")
+						print(position)
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -406,7 +417,10 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						
+						print("right")
+						print(cal)
+						print("from")
+						print(position)
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -415,7 +429,10 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						
+						print("straight")
+						print(cal)
+						print("from")
+						print(position)
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
@@ -423,6 +440,10 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
+						print("straight")
+						print(cal)
+						print("from")
+						print(position)
 						if x < len(self.map) and y < len(self.map[0]):
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
