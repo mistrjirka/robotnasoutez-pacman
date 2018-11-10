@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1550, starting_point = [4,2], SM_sleep = 0.10, critical_distance = 20, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1500, starting_point = [4,2], SM_sleep = 0.10, critical_distance = 20, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -221,11 +221,11 @@ class Robot():
 		sleep(self.SM_sleep)
 		data[0] = self.sonicValue()
 		
-		self.SM.run_to_abs_pos(position_sp=-180, speed_sp=self.SM_speed, stop_action="hold")
+		self.SM.run_to_abs_pos(position_sp=-90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep*4)
 		data[2] = self.sonicValue()
 		
-		self.SM.run_to_abs_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
+		self.SM.run_to_abs_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep/1.5)
 		# ~ print("result")
 		# ~ print(data)
