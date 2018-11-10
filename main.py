@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from trueturn import TrueTurn
 from time import sleep
-from ev3dev.ev3 import UltrasonicSensor, MediumMotor, LargeMotor, TouchSensor, Screen
+from ev3dev.ev3 import UltrasonicSensor, LargeMotor, TouchSensor, Screen
+from ev3dev2.motor import MediumMotor
 from threading import Thread 
 import math
 from json import dumps as stringify
