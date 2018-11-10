@@ -382,38 +382,44 @@ class Robot():
 					if ways[0]: #left
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
-						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
-							self.map[x][y] = self.map_legend["todo"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done" :
+								self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[1]["axis"])]["y"]
-						if self.map[x][y]["name"] != "done":
-							self.map[x][y] = self.map_legend["blocked"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done":
+								self.map[x][y] = self.map_legend["blocked"]
 					
 					if ways[2]: #right
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
-							self.map[x][y] = self.map_legend["todo"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done":
+								self.map[x][y] = self.map_legend["blocked"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[0]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done":
-							self.map[x][y] = self.map_legend["blocked"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done":
+								self.map[x][y] = self.map_legend["blocked"]
 						
 					if ways[1]: #straight
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 						
-						if self.map[x][y]["name"] != "done" and x < len(self.map) and y < len(self.map[0]):
-							self.map[x][y] = self.map_legend["todo"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done" :
+								self.map[x][y] = self.map_legend["todo"]
 					else:
 						x = position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"]
 						y = position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
-						if self.map[x][y]["name"] != "done":
-							self.map[x][y] = self.map_legend["blocked"]
+						if x < len(self.map) and y < len(self.map[0]):
+							if self.map[x][y]["name"] != "done":
+								self.map[x][y] = self.map_legend["blocked"]
 					print("map")
 					print(self.map)
 					
