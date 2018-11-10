@@ -221,8 +221,10 @@ class Robot():
 		sleep(self.SM_sleep)
 		data[0] = self.sonicValue()
 		
-		self.SM.run_to_rel_pos(position_sp=-182, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep*3)
+		self.SM.run_to_rel_pos(position_sp=-90, speed_sp=self.SM_speed, stop_action="hold")
+		sleep(self.SM_sleep)
+		self.SM.run_to_rel_pos(position_sp=-90, speed_sp=self.SM_speed, stop_action="hold")
+		sleep(self.SM_sleep)
 		data[2] = self.sonicValue()
 		
 		self.SM.run_to_rel_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
