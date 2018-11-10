@@ -216,17 +216,16 @@ class Robot():
 		data = [0,0,0]
 		# ~ print("checkway")
 		data[1] = self.sonicValue()
-		sleep(self.SM_sleep)
 		self.SM.run_to_abs_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		sleep(self.SM_sleep)
 		data[0] = self.sonicValue()
 		
 		self.SM.run_to_abs_pos(position_sp=-90, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep*4)
+		sleep(self.SM_sleep*2.2)
 		data[2] = self.sonicValue()
 		
 		self.SM.run_to_abs_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep/1.5)
+		sleep(self.SM_sleep/1)
 		# ~ print("result")
 		# ~ print(data)
 		return data
