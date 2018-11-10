@@ -120,6 +120,12 @@ class Robot():
 			}
 		}
 		
+		self.decision_config = [
+			self.calLeft,
+			self.calStraight,
+			self.calRight
+		]
+		
 		def straight():
 			print("running")
 			if self.TrueTurn.isRunning() is not True:
@@ -242,9 +248,9 @@ class Robot():
 			print("loop")
 			print(self.async_return["ways"])
 			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
-			options = self.ArrayIndexCheck(simplified, True)
+			# ~ options = self.ArrayIndexCheck(simplified, True)
 			print (simplified)
-			todo = self.decisionMaking(options, simplified)
+			todo = self.decisionMaking(simplified)
 			print(todo)
 			todo["do"]()
 			print("endofloop")
@@ -289,16 +295,26 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self, options, ways):  #todo some very smart algorithm that will be using map
+	def decisionMaking(self, ways):  #todo some very smart algorithm that will be using map
 		
+		i = 0
+		options = []
+		for z in ways:
+			if z:
+				cal = self.decision_config[i]()
+				
+				if self.map[x][y]["todo"]:
+					options.append(i)
+			
+			i += 1 
 		
 		for x in self.config_array:
 			if x["index"] in options:
 				return x
 		
-		for x in self.config_array:
-			if x["index"] == -1:
-				return x
+		for y in self.config_array:
+			if y["index"] == -1:
+				return y
 	
 	"""These three functions are for syncing searching with turning to prevent false results"""
 	
