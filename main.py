@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.09, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 1, motor_speed = 200, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.088, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 1, motor_speed = 200, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
