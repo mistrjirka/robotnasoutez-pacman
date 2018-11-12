@@ -297,20 +297,31 @@ class Robot():
 	
 	def decisionMaking(self, ways):  #todo some very smart algorithm that will be using map
 		
-		i = 0
-		options = []
 		print(ways)
-		for z in ways:
-			if z:
-				cal = self.decision_config[i](self.position, self.map_direction)
-				x = cal[0]
-				y = cal[1]
-				print(cal)
-				print(i)
-				if self.map[x][y]["todo"]:
-					options.append(i)
+		def smartCheck(strict = True): # not really that smart 
+			options = []
+			i = 0
 			
-			i += 1 
+			for z in ways:
+				if z:
+					cal = self.decision_config[i](self.position, self.map_direction)
+					x = cal[0]
+					y = cal[1]
+					print(cal)
+					print(i)
+					if strict:
+						if self.map[x][y]["todo"]:
+							options.append(i)
+					else:
+						options.append(i)
+				
+				i += 1 
+		options = smartCheck()
+		
+		if len(options) == 0: #failsafe
+			global options
+			options = smartCheck(False)
+			
 		
 		print (options)
 		for x in self.config_array:
