@@ -316,6 +316,7 @@ class Robot():
 						options.append(i)
 				
 				i += 1 
+			return options
 		options = smartCheck()
 		
 		if len(options) == 0: #failsafe
