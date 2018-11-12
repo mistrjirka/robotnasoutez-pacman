@@ -307,13 +307,14 @@ class Robot():
 					cal = self.decision_config[i](self.position, self.map_direction)
 					x = cal[0]
 					y = cal[1]
-					print(cal)
-					print(i)
-					if strict:
-						if self.map[x][y]["todo"]:
+					if x < len(self.map) and y < len(self.map[0]):
+						print(cal)
+						print(i)
+						if strict:
+							if self.map[x][y]["todo"]:
+								options.append(i)
+						else:
 							options.append(i)
-					else:
-						options.append(i)
 				
 				i += 1 
 			return options
