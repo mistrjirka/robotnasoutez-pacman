@@ -302,7 +302,7 @@ class Robot():
 		print(ways)
 		for z in ways:
 			if z:
-				cal = self.decision_config[i]()
+				cal = self.decision_config[i](self.position, self.direction)
 				x = cal[0]
 				y = cal[1]
 				print(cal)
