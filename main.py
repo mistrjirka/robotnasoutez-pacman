@@ -341,7 +341,7 @@ class Robot():
 			cache.append([])
 			for j in range (0, y):
 				print (self)
-				cache[i].append({"name": "empty"})
+				cache[i].append({"name": "empty", "todo": True, "free": True})
 				
 		return cache
 		
