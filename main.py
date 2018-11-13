@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.075, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 1, motor_speed = 150, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.075, critical_distance = 20, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 1, motor_speed = 150, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -307,7 +307,7 @@ class Robot():
 					cal = self.decision_config[i](self.position, self.map_direction)
 					x = cal[0]
 					y = cal[1]
-					if x < len(self.map) and y < len(self.map[0]):
+					if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 						print(cal)
 						print(i)
 						if strict:
@@ -411,7 +411,7 @@ class Robot():
 					print (measuringPoint)
 					print (position)
 					
-					self.map[position[0]][position[1]] = self.map[x][y] = self.map_legend["done"]
+					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
 					if ways[0]: #left
 						cal = self.calLeft(position, direction)
@@ -421,7 +421,7 @@ class Robot():
 						print(position)
 						x = cal[0]
 						y = cal[1]
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
 					else:
@@ -432,7 +432,7 @@ class Robot():
 						print(cal)
 						print("from")
 						print(position)
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					
@@ -444,7 +444,7 @@ class Robot():
 						print(cal)
 						print("from")
 						print(position)
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					else:
@@ -455,7 +455,7 @@ class Robot():
 						print(cal)
 						print("from")
 						print(position)
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 						
@@ -467,7 +467,7 @@ class Robot():
 						print(cal)
 						print("from")
 						print(position)
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
 					else:
@@ -478,7 +478,7 @@ class Robot():
 						print(cal)
 						print("from")
 						print(position)
-						if x < len(self.map) and y < len(self.map[0]):
+						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					print("map")
