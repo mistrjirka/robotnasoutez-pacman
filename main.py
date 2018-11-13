@@ -321,7 +321,6 @@ class Robot():
 		options = smartCheck()
 		
 		if len(options) == 0: #failsafe
-			global options
 			options = smartCheck(False)
 			
 		
