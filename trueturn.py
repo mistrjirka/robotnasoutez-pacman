@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from ev3dev.ev3 import GyroSensor, LargeMotor
 from time import sleep
 import math
@@ -187,4 +185,4 @@ class TrueTurn:
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
 	def isRunning(self):
-		return not self.stop
+return not self.stop
