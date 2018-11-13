@@ -143,6 +143,7 @@ class TrueTurn:
 			return succes
 		field = range(angle-tolerance, angle+tolerance)
 		while self.stop == False:
+			print("running")
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
 			sleep(0.2)
