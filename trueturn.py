@@ -185,4 +185,4 @@ class TrueTurn:
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
 	def isRunning(self):
-return not self.stop
+		return not self.stop
