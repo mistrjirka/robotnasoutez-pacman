@@ -74,22 +74,24 @@ class TrueTurn:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
 						print("normal")
+						print(self.GS.value())
 						self.M1.run_forever(speed_sp=self.speed * multiplier)
 						self.M2.run_forever(speed_sp=self.speed * multiplier * -1)
 						rightTurn = True
 						leftTurn = False
 					else:
-						sleep(0.002)
+						sleep(0.0012)
 				
 				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
 					if not leftTurn:
+						print(self.GS.value())
 						print("normal left")
 						self.M1.run_forever(speed_sp=self.speed * multiplier * -1)
 						self.M2.run_forever(speed_sp=self.speed * multiplier)
 						rightTurn = False
 						leftTurn = True
 					else:
-						sleep(0.002)
+						sleep(0.0012)
 		self.M1.stop()
 		self.M2.stop()
 		sleep(0.1)
