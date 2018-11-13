@@ -41,9 +41,11 @@ class TrueTurn:
 		if tolerance > 0:
 			field = range(math.ceil(degrees - self.tolerance * degrees), math.ceil(degrees + self.tolerance * degrees), multiplier)
 			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
+			print (advancedField)
 		else:
 			field = [self.tolerance]
 			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
+			print (advancedField)
 		
 		while angle - self.GS.value() not in field:
 			
@@ -52,6 +54,7 @@ class TrueTurn:
 				print(self.GS.value())
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not slowRightTurn:
+						print("slow right")
 						self.M1.run_forever(speed_sp=self.speed * multiplier / 2.5)
 						self.M2.run_forever(speed_sp=self.speed * multiplier * -1 /2.5)
 						slowRightTurn = True
@@ -60,6 +63,7 @@ class TrueTurn:
 				
 				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
 					if not leftTurn:
+						print("slow right")
 						self.M1.run_forever(speed_sp=self.speed * multiplier * -1 / 2)
 						self.M2.run_forever(speed_sp=self.speed * multiplier / 2)
 						slowRightTurn = False
@@ -69,6 +73,7 @@ class TrueTurn:
 			else:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
+						print("normal")
 						self.M1.run_forever(speed_sp=self.speed * multiplier)
 						self.M2.run_forever(speed_sp=self.speed * multiplier * -1)
 						rightTurn = True
@@ -78,6 +83,7 @@ class TrueTurn:
 				
 				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
 					if not leftTurn:
+						print("normal left")
 						self.M1.run_forever(speed_sp=self.speed * multiplier * -1)
 						self.M2.run_forever(speed_sp=self.speed * multiplier)
 						rightTurn = False
@@ -97,6 +103,7 @@ class TrueTurn:
 			while angle - self.GS.value() not in field:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
+						print ("micro")
 						self.M1.run_forever(speed_sp=self.speed * multiplier / 5)
 						self.M2.run_forever(speed_sp=self.speed * multiplier * -1 /5)
 						rightTurn = True
