@@ -139,11 +139,11 @@ class TrueTurn:
 			j = 0
 			for i in field:
 				if j == 0:
-					if i > thing:
+					if i < thing:
 						succes = 2
 						break
 				if j == len(field) - 1:
-					if i < thing:
+					if i > thing:
 						succes = 3
 						break 
 				if thing == i:
@@ -151,28 +151,41 @@ class TrueTurn:
 					break
 				j = j + 1
 			return succes
+		
 		field = range(angle-tolerance, angle+tolerance)
+		
 		while self.motor_stop == False:
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
+			
 			sleep(0.2)
+			
 			value = self.GS.value()
+			
 			if inField(field, value) == 2:
 				print("compesating 2")
+				
 				self.M1.run_forever(speed_sp=speed - 50 * direction)
+				
 				while self.GS.value() not in field:
 					sleep(0.02)
 					print(self.GS.value())
+				
 				self.M1.run_forever(speed_sp=speed * direction)
 				self.M2.run_forever(speed_sp=speed * direction)
+				
 			elif inField(field, value) == 3:
 				print("compesating 3")
+				
 				self.M2.run_forever(speed_sp=speed - 50 * direction)
+				
 				while self.GS.value() not in field:
 					print(self.GS.value())
 					sleep(0.02)
+				
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
+				
 		if self.motor_stop is True:
 			self.stopMotors()
 	def measureDistanceStart(self):
