@@ -26,7 +26,8 @@ class TrueTurn:
 		multiplier = -1
 		if degrees > 0:
 			multiplier = 1
-		self.GS.mode='GYRO-ANG'
+		
+		self.resetValue()
 		angle = self.GS.value()
 		running = False
 		self.breaker = False
@@ -127,8 +128,8 @@ class TrueTurn:
 		self.resetValue()
 		return True
 	def straight(self, direction, speed, tolerance):
-		self.resetValue()
 		self.stopMotors()
+		self.resetValue()
 		angle = self.GS.value()
 		multiplier = 1
 		if angle < 0:
