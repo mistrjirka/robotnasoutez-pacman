@@ -47,8 +47,10 @@ class TrueTurn:
 			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
 			print (advancedField)
 		
-		while angle - self.GS.value() not in field:
-			
+		while abs(angle - self.GS.value()) not in field:
+			print (advancedField)
+			print (angle - self.GS.value())
+			print(abs(angle - self.GS.value()))
 			if angle - self.GS.value() in advancedField:
 				print("minor")
 				print(self.GS.value())
