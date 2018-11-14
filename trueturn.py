@@ -139,11 +139,11 @@ class TrueTurn:
 			j = 0
 			for i in field:
 				if j == 0:
-					if i > thing:
+					if i < thing:
 						succes = 2
 						break
 				if j == len(field) - 1:
-					if i < thing:
+					if i > thing:
 						succes = 3
 						break 
 				if thing == i:
