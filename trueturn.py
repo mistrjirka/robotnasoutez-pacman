@@ -97,7 +97,7 @@ class TrueTurn:
 		self.M1.stop()
 		self.M2.stop()
 		sleep(0.1)
-		
+		print("ok it works")
 		leftTurn = False
 		rightTurn = False
 		slowLeftTurn = False
