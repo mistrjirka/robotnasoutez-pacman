@@ -11,7 +11,7 @@ class TrueTurn:
 			self.GS = GyroSensor()
 		self.M1 = LargeMotor(motor1Port)
 		self.M2 = LargeMotor(motor2Port)
-		self.stop = True
+		self.motor_stop = True
 		self.wheelDiameter = wheelDiameter
 		self.time = 0
 		self.MDistanceRunning = True
@@ -133,7 +133,7 @@ class TrueTurn:
 		multiplier = 1
 		if angle < 0:
 			multiplier = -1
-		self.stop = False
+		self.motor_stop = False
 		def inField(field, thing):
 			succes = 0
 			j = 0
@@ -152,13 +152,13 @@ class TrueTurn:
 				j = j + 1
 			return succes
 		field = range(angle-tolerance, angle+tolerance)
-		while self.stop == False:
+		while self.motor_stop == False:
 			self.M1.run_forever(speed_sp=speed * direction)
 			self.M2.run_forever(speed_sp=speed * direction)
 			sleep(0.2)
 			value = self.GS.value()
 			if inField(field, value) == 2:
-				print("compesating")
+				print("compesating 2")
 				self.M1.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
 					sleep(0.02)
@@ -166,14 +166,14 @@ class TrueTurn:
 				self.M1.run_forever(speed_sp=speed * direction)
 				self.M2.run_forever(speed_sp=speed * direction)
 			elif inField(field, value) == 3:
-				print("compesating")
+				print("compesating 3")
 				self.M2.run_forever(speed_sp=speed - 50 * direction)
 				while self.GS.value() not in field:
 					print(self.GS.value())
 					sleep(0.02)
 				self.M2.run_forever(speed_sp=speed * direction)
 				self.M1.run_forever(speed_sp=speed * direction)
-		if self.stop is True:
+		if self.motor_stop is True:
 			self.stopMotors()
 	def measureDistanceStart(self):
 		self.distance = self.M1.position
@@ -191,7 +191,7 @@ class TrueTurn:
 		return self.MDistanceRunning
 	
 	def stopMotors(self):
-		self.stop = True
+		self.motor_stop = True
 		self.M2.stop()
 		self.M1.stop()
 		self.resetValue()
@@ -199,4 +199,4 @@ class TrueTurn:
 		self.GS.mode = 'GYRO-RATE'
 		self.GS.mode = 'GYRO-ANG'
 	def isRunning(self):
-		return not self.stop
+		return not self.motor_stop
