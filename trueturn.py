@@ -47,13 +47,13 @@ class TrueTurn:
 			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
 			print (advancedField)
 		
-		while angle - self.GS.value() not in field:
+		while angle - self.GS.value() * -1 not in field:
 			print (advancedField)
-			print (angle - self.GS.value())
-			print(abs(angle - self.GS.value()))
-			if angle - self.GS.value() in advancedField:
+			print (angle - self.GS.value() * -1)
+			print(abs(angle - self.GS.value() * -1))
+			if angle - self.GS.value() * -1 in advancedField:
 				print("minor")
-				print(self.GS.value())
+				print(self.GS.value() * -1)
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we want to turn on both sides
 					if not slowRightTurn:
 						print("slow right")
@@ -103,7 +103,7 @@ class TrueTurn:
 		slowLeftTurn = False
 		slowRightTurn = False
 		
-		if angle - self.GS.value() not in field:
+		if angle - self.GS.value() * -1 not in field:
 			while abs(angle - self.GS.value()) not in field:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
