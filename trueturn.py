@@ -103,8 +103,8 @@ class TrueTurn:
 		slowLeftTurn = False
 		slowRightTurn = False
 		
-		if angle - self.GS.value() not in field:
-			while angle - self.GS.value() not in field:
+		if abs(angle - self.GS.value()) not in field:
+			while abs(angle - self.GS.value()) not in field:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
 						print ("micro")
