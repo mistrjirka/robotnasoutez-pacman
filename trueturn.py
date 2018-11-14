@@ -47,14 +47,14 @@ class TrueTurn:
 			advancedField = range(math.ceil(degrees - 0.1 * degrees), math.ceil(degrees + 0.1 * degrees), multiplier)
 			print (advancedField)
 		
-		while abs(angle - self.GS.value()) not in field:
+		while angle - self.GS.value() not in field:
 			print (advancedField)
 			print (angle - self.GS.value())
 			print(abs(angle - self.GS.value()))
 			if angle - self.GS.value() in advancedField:
 				print("minor")
 				print(self.GS.value())
-				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
+				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we want to turn on both sides
 					if not slowRightTurn:
 						print("slow right")
 						self.M1.run_forever(speed_sp=self.speed * multiplier / 2.5)
@@ -63,7 +63,7 @@ class TrueTurn:
 						slowLeftTurn = False
 						sleep(0.001)
 				
-				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
+				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we want to turn on both sides
 					if not leftTurn:
 						print("slow right")
 						self.M1.run_forever(speed_sp=self.speed * multiplier * -1 / 2)
@@ -73,7 +73,7 @@ class TrueTurn:
 						sleep(0.001)
 			
 			else:
-				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
+				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we want to turn on both sides
 					if not rightTurn:
 						print("normal")
 						print(self.GS.value())
@@ -84,7 +84,7 @@ class TrueTurn:
 					else:
 						sleep(0.0012)
 				
-				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we won to turn on both sides
+				if abs(angle - self.GS.value()) > abs(field[len(field) - 1]): #we have to make them absolute because we want to turn on both sides
 					if not leftTurn:
 						print(self.GS.value())
 						print("normal left")
@@ -103,7 +103,7 @@ class TrueTurn:
 		slowLeftTurn = False
 		slowRightTurn = False
 		
-		if abs(angle - self.GS.value()) not in field:
+		if angle - self.GS.value() not in field:
 			while abs(angle - self.GS.value()) not in field:
 				if abs(angle - self.GS.value()) <  abs(field[0]): #we have to make them absolute because we won to turn on both sides
 					if not rightTurn:
