@@ -424,6 +424,8 @@ class Robot():
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
 					else:
+						print("ways left")
+						print(ways)
 						cal = self.calLeft(position, direction)
 						x = cal[0]
 						y = cal[1]
@@ -447,6 +449,8 @@ class Robot():
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
 					else:
+						print("ways right")
+						print(ways)
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
