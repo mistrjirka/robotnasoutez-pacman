@@ -159,13 +159,13 @@ class Robot():
 			self.pauseSearch()
 			self.pauseMapping()
 			sleep(0.2)
-			print("turning")
+			#~ print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.mapTurn(self.map_config_array[1])
 			self.resumeMapping()
 			afterTurn()
-			print ("end of turning")
+			#~ print ("end of turning")
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
@@ -174,11 +174,11 @@ class Robot():
 			sleep(0.2)
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
-			print ("turning")
+			#~ print ("turning")
 			self.mapTurn(self.map_config_array[0])
 			self.resumeMapping()
 			afterTurn()
-			print ("end of turning")
+			#~ print ("end of turning")
 		
 		self.turn_counter = 0
 		
@@ -246,15 +246,15 @@ class Robot():
 		self.asyncMapping()
 		
 		while True:
-			print("loop")
-			print(self.async_return["ways"])
+			#~ print("loop")
+			#~ print(self.async_return["ways"])
 			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
 			# ~ options = self.ArrayIndexCheck(simplified, True)
 			print (simplified)
 			todo = self.decisionMaking(simplified)
-			print(todo)
+			#~ print(todo)
 			todo["do"]()
-			print("endofloop")
+			#~ print("endofloop")
 			
 	
 	def arrayCheck(self, array, value, inverted = False):
@@ -400,24 +400,24 @@ class Robot():
 					
 					self.position = position
 					
-					print ("mapping")
+					#~ print ("mapping")
 					
-					print(direction)
+					#~ print(direction)
 					
-					print(distance)
+					#~ print(distance)
 					
-					print (blocks)
-					print (measuringPoint)
-					print (position)
+					#~ print (blocks)
+					#~ print (measuringPoint)
+					#~ print (position)
 					
 					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
 					if ways[0]: #left
 						cal = self.calLeft(position, direction)
-						print("left")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("left")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						x = cal[0]
 						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
@@ -429,10 +429,10 @@ class Robot():
 						cal = self.calLeft(position, direction)
 						x = cal[0]
 						y = cal[1]
-						print("left")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("left")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -441,10 +441,10 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						print("right")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("right")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -454,10 +454,10 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						print("right")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("right")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
@@ -466,10 +466,10 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						print("straight")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("straight")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
 								self.map[x][y] = self.map_legend["todo"]
@@ -477,10 +477,10 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						print("straight")
-						print(cal)
-						print("from")
-						print(position)
+						#~ print("straight")
+						#~ print(cal)
+						#~ print("from")
+						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
