@@ -484,8 +484,8 @@ class Robot():
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.map[x][y] = self.map_legend["blocked"]
-					print("map")
-					print(self.map)
+					#~ print("map")
+					#~ print(self.map)
 					
 					fh = open("/var/www/html/map.txt","w")
 					fh.write(stringify(self.map))
