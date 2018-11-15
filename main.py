@@ -448,7 +448,7 @@ class Robot():
 						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
-								self.map[x][y] = self.map_legend["blocked"]
+								self.map[x][y] = self.map_legend["todo"]
 					else:
 						print("ways right")
 						print(ways)
