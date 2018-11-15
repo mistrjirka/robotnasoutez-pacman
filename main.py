@@ -27,6 +27,7 @@ class Robot():
 		self.SM_speed = SM_speed
 		self.SM_sleep = SM_sleep
 		
+		self.SM.reset()
 		self.position = starting_point
 		
 		self.block_size = block_size
@@ -65,12 +66,12 @@ class Robot():
 				"y": 1
 			},
 			{
-				"x": -1,
+				"x": 1,
 				"y": 0
 			},
 			{
 				"x": 0,
-				"y": -1 
+				"y": 1 
 			},
 			{
 				"x": 1,
