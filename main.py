@@ -227,7 +227,7 @@ class Robot():
 		data[0] = self.sonicValue()
 		
 		self.SM.run_to_abs_pos(position_sp=-90, speed_sp=self.SM_speed, stop_action="hold")
-		sleep(self.SM_sleep*2)
+		sleep(self.SM_sleep*2.2)
 		data[2] = self.sonicValue()
 		
 		self.SM.run_to_abs_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
@@ -486,7 +486,7 @@ class Robot():
 					fh.write(stringify(self.map))
 					fh.close()
 					
-					sleep(0.2)
+					sleep(0.4)
 				
 				
 		t = Thread(target=mapping)
