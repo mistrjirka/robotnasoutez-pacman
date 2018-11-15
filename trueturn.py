@@ -17,9 +17,9 @@ class TrueTurn:
 		self.MDistanceRunning = True
 		self.distance = 0
 		self.pauseDistance = []
+		self.GS.mode = 'GYRO-ANG'
 		
 	def turn(self, degrees, speed = 150, tolerance = 0.05):
-		self.resetValue()
 		self.stopMotors()
 		self.tolerance = tolerance
 		self.speed = speed
@@ -28,6 +28,7 @@ class TrueTurn:
 			multiplier = 1
 		
 		self.resetValue()
+		self.GS.mode = 'GYRO-ANG'
 		angle = self.GS.value()
 		running = False
 		self.breaker = False
@@ -132,6 +133,7 @@ class TrueTurn:
 	def straight(self, direction, speed, tolerance):
 		self.stopMotors()
 		self.resetValue()
+		self.GS.mode = 'GYRO-ANG'
 		angle = self.GS.value()
 		multiplier = 1
 		if angle < 0:
@@ -212,7 +214,10 @@ class TrueTurn:
 		self.M1.stop()
 		self.resetValue()
 	def resetValue(self):
-		self.GS.mode = 'GYRO-RATE'
+		self.GS.mode = 'GYRO-FAS'
+		sleep(0.002)
 		self.GS.mode = 'GYRO-ANG'
+		sleep(0.001)
+		
 	def isRunning(self):
 		return not self.motor_stop
