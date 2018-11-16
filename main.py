@@ -211,13 +211,37 @@ class Robot():
 		
 	
 	def sonicValue(self, tolerance = 10):
-		cache = [1,100]
-		while abs(cache[0] - cache[1]) > tolerance and not (cache[0] > self.critical_distance * 1.5 and cache[1] > self.critical_distance * 1.5):
-			cache[0] = self.US.value()/10 
+		cache = []
+		def measure():
+			cache.append(self.US.value()/10)
 			sleep(0.025)
-			cache[1] = self.US.value()/10
+			cache.append(self.US.value()/10)
 			sleep(0.025)
-		return sum(cache) / len(cache)
+			cache.append(self.US.value()/10)
+			sleep(0.025)
+		
+		measure()
+		
+		biggest = max(cache)
+		smallest = min(cache)
+		
+		biggestArray = []
+		smallestArray = []
+		
+		for i in cache:
+			if abs(biggest - i) < abs(i - smallest):
+				biggestArray.append(i)
+			elif abs(biggest - i) > abs(i - smallest):
+				smallestArray.append(i)
+		
+		solution = []
+		
+		if len(biggestArray) > len(smallestArray):
+			solution = biggestArray
+		else: 
+			solution = smallestArray
+	
+		return sum(solution) / len(solution)
 	
 	def checkWay(self): #async function
 		data = [0,0,0]
@@ -322,6 +346,7 @@ class Robot():
 		options = smartCheck()
 		
 		if len(options) == 0: #failsafe
+			print("failsafe")
 			options = smartCheck(False)
 			
 		
