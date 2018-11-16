@@ -212,15 +212,14 @@ class Robot():
 	
 	def sonicValue(self, tolerance = 10):
 		cache = []
-		def measure():
-			cache.append(self.US.value()/10)
-			sleep(0.025)
-			cache.append(self.US.value()/10)
-			sleep(0.025)
-			cache.append(self.US.value()/10)
-			sleep(0.025)
 		
-		measure()
+		cache.append(self.US.value()/10)
+		sleep(0.025)
+		cache.append(self.US.value()/10)
+		sleep(0.025)
+		cache.append(self.US.value()/10)
+		sleep(0.025)
+		
 		
 		biggest = max(cache)
 		smallest = min(cache)
