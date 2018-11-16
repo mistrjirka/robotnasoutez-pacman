@@ -570,6 +570,8 @@ class Robot():
 					#~ print("map")
 					#~ print(self.map)
 					
+					print(self.mes_map)
+					
 					fh = open("/var/www/html/map.txt","w")
 					fh.write(stringify(self.map))
 					fh.close()
