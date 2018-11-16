@@ -348,6 +348,8 @@ class Robot():
 							if self.map[x][y]["free"]:
 								ways[ind] = True
 					ind += 1
+				
+				return ways
 			
 			ways = waycheck()
 			
