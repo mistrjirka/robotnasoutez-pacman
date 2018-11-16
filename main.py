@@ -408,7 +408,7 @@ class Robot():
 			cache.append([])
 			for j in range (0, y):
 				print (self)
-				cache[i].append(fill)
+				cache[i].append(fill.copy())
 				
 		return cache
 		
@@ -469,12 +469,12 @@ class Robot():
 						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
 						
 						if free >= 0.7:
-							return self.map_legend["todo"]
+							return self.map_legend["todo"].copy()
 							
 						if blocked >= 0.7:
-							return self.map_legend["blocked"]
+							return self.map_legend["blocked"].copy()
 						
-						return self.map_legend["blocked"]
+						return self.map_legend["blocked"].copy()
 					
 					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
@@ -487,7 +487,7 @@ class Robot():
 						x = cal[0]
 						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
-							if self.map[x][y]["name"] != "done" :
+							if self.map[x][y]["name"] != "done":
 								self.mes_map[x][y]["free"] += 1
 								
 								self.map[x][y] = calcStatus(x,y)
@@ -537,7 +537,7 @@ class Robot():
 								self.mes_map[x][y]["blocked"] += 1
 								
 								self.map[x][y] = calcStatus(x,y)
-						
+						..
 					if ways[1]: #straight
 						cal = self.calStraight(position, direction)
 						x = cal[0]
