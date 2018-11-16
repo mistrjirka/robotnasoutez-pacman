@@ -211,6 +211,7 @@ class Robot():
 		
 	
 	def sonicValue(self, tolerance = 10):
+		
 		cache = []
 		
 		cache.append(self.US.value()/10)
@@ -229,9 +230,9 @@ class Robot():
 		smallestArray = []
 		
 		for i in cache:
-			if abs(biggest - i) < abs(i - smallest):
+			if abs(biggest - i) <= abs(i - smallest):
 				biggestArray.append(i)
-			elif abs(biggest - i) > abs(i - smallest):
+			elif abs(biggest - i) >= abs(i - smallest):
 				smallestArray.append(i)
 		
 		solution = []
@@ -240,7 +241,7 @@ class Robot():
 			solution = biggestArray
 		else: 
 			solution = smallestArray
-	
+		
 		return sum(solution) / len(solution)
 	
 	def checkWay(self): #async function
