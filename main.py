@@ -32,8 +32,6 @@ class Robot():
 		
 		self.block_size = block_size
 		
-		self.map = self.createMap(max_map_size[0], max_map_size[1])
-		
 		self.critical_distance = critical_distance
 		
 		self.turn_tolerance = turn_tolerance
@@ -117,9 +115,14 @@ class Robot():
 				"todo": False
 			},
 			"empty":{
-				"name": "empty"
+				"name": "empty",
+				"free": False,
+				"todo": True
 			}
 		}
+		
+		self.map = self.createMap(max_map_size[0], max_map_size[1], self.map_legend["empty"])
+		self.mes_map = self.createMap(max_map_size[0], max_map_size[1], {"blocked": 0, "free":0})
 		
 		self.decision_config = [
 			self.calLeft,
@@ -397,13 +400,13 @@ class Robot():
 	def rawValue(self):
 		return self.US.value()
 	
-	def createMap(self, x, y):
+	def createMap(self, x, y, fill):
 		cache = []
 		for i in range (0,x):
 			cache.append([])
 			for j in range (0, y):
 				print (self)
-				cache[i].append({"name": "empty", "todo": True, "free": True})
+				cache[i].append(fill)
 				
 		return cache
 		
@@ -459,6 +462,18 @@ class Robot():
 					#~ print (measuringPoint)
 					#~ print (position)
 					
+					def calcStatus(x,y):
+						free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
+						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
+						
+						if free >= 0.7:
+							return self.map_legend["todo"]
+							
+						if blocked >= 0.7:
+							return self.map_legend["blocked"]
+						
+						return self.map_legend["blocked"]
+					
 					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
 					if ways[0]: #left
@@ -471,7 +486,9 @@ class Robot():
 						y = cal[1]
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
-								self.map[x][y] = self.map_legend["todo"]
+								self.mes_map[x][y]["free"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 					else:
 						print("ways left")
 						print(ways)
@@ -485,7 +502,9 @@ class Robot():
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("left")
-								self.map[x][y] = self.map_legend["blocked"]
+								self.mes_map[x][y]["blocked"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 					
 					if ways[2]: #right
 						cal = self.calRight(position, direction)
@@ -497,7 +516,9 @@ class Robot():
 						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
-								self.map[x][y] = self.map_legend["todo"]
+								self.mes_map[x][y]["free"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 					else:
 						print("ways right")
 						print(ways)
@@ -511,7 +532,9 @@ class Robot():
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("right")
-								self.map[x][y] = self.map_legend["blocked"]
+								self.mes_map[x][y]["blocked"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 						
 					if ways[1]: #straight
 						cal = self.calStraight(position, direction)
@@ -523,7 +546,9 @@ class Robot():
 						#~ print(position)
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
-								self.map[x][y] = self.map_legend["todo"]
+								self.mes_map[x][y]["free"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 					else:
 						print("ways straight")
 						print(ways)
@@ -537,7 +562,9 @@ class Robot():
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("straight")
-								self.map[x][y] = self.map_legend["blocked"]
+								self.mes_map[x][y]["blocked"] += 1
+								
+								self.map[x][y] = calcStatus(x,y)
 					#~ print("map")
 					#~ print(self.map)
 					
