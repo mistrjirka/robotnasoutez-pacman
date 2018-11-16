@@ -321,12 +321,35 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self, ways):  #todo some very smart algorithm that will be using map
+	def decisionMaking(self):  #todo some very smart algorithm that will be using map
 		
-		print(ways)
 		def smartCheck(strict = True): # not really that smart 
 			options = []
 			i = 0
+			
+			def waycheck(strict = True):
+				
+				ways = [False, False, False]
+				
+				ind = 0
+				
+				for j in self.decision_config:
+					cal = j(self.position, self.map_direction)
+					x = cal[0]
+					y = cal[1]
+					if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
+						if strict:
+							if self.map[x][y]["todo"]:
+								ways[ind] = True
+						else:
+							if self.map[x][y]["free"]:
+								ways[ind] = True
+					ind += 1
+			
+			ways = waycheck()
+			
+			if len(ways) == 0:
+				waycheck(False)
 			
 			for z in ways:
 				if z:
@@ -522,7 +545,7 @@ class Robot():
 					fh.write(stringify(self.map))
 					fh.close()
 					
-					sleep(0.4)
+					sleep(0.2)
 				
 				
 		t = Thread(target=mapping)
