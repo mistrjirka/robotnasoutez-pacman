@@ -220,6 +220,7 @@ class Robot():
 		cache.append(self.US.value()/10)
 		sleep(0.025)
 		
+		print(cache)
 		
 		biggest = max(cache)
 		smallest = min(cache)
