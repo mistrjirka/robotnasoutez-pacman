@@ -574,6 +574,10 @@ class Robot():
 					fh.write(stringify(self.map))
 					fh.close()
 					
+					fh2 = open("/var/www/html/mesmap.txt","w")
+					fh2.write(stringify(self.mes_map))
+					fh2.close()
+					
 					sleep(0.2)
 				
 				
