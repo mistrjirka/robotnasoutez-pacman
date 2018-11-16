@@ -537,7 +537,7 @@ class Robot():
 								self.mes_map[x][y]["blocked"] += 1
 								
 								self.map[x][y] = calcStatus(x,y)
-						..
+						
 					if ways[1]: #straight
 						cal = self.calStraight(position, direction)
 						x = cal[0]
