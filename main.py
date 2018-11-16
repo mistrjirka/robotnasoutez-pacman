@@ -324,7 +324,7 @@ class Robot():
 			index += 1
 		return data
 	
-	def decisionMaking(self):  #todo some very smart algorithm that will be using map
+	def decisionMaking(self, notToUse):  #todo some very smart algorithm that will be using map
 		
 		def smartCheck(strict = True): # not really that smart 
 			options = []
