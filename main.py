@@ -166,13 +166,11 @@ class Robot():
 			self.pauseSearch()
 			self.pauseMapping()
 			sleep(0.2)
-			#~ print("turning")
 			self.TrueTurn.turn(-90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
 			self.mapTurn(self.map_config_array[1])
 			self.resumeMapping()
 			afterTurn()
-			#~ print ("end of turning")
 		
 		def turnRight():
 			self.TrueTurn.stopMotors()
@@ -181,11 +179,9 @@ class Robot():
 			sleep(0.2)
 			self.TrueTurn.turn(90, self.motor_speed_turning, self.turn_tolerance)
 			sleep(0.2)
-			#~ print ("turning")
 			self.mapTurn(self.map_config_array[0])
 			self.resumeMapping()
 			afterTurn()
-			#~ print ("end of turning")
 		
 		self.turn_counter = 0
 		
@@ -251,9 +247,8 @@ class Robot():
 		
 		return sum(solution) / len(solution)
 	
-	def checkWay(self): #async function
+	def checkWay(self): 
 		data = [0,0,0]
-		# ~ print("checkway")
 		data[1] = self.sonicValue()
 		self.SM.run_to_abs_pos(position_sp=90, speed_sp=self.SM_speed, stop_action="hold")
 		self.SM.wait_until_not_moving()
@@ -265,8 +260,6 @@ class Robot():
 		
 		self.SM.run_to_abs_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		self.SM.wait_until_not_moving()
-		# ~ print("result")
-		# ~ print(data)
 		return data
 	
 	def cycle(self): #main function
@@ -278,16 +271,10 @@ class Robot():
 		self.asyncMapping()
 		
 		while True:
-			#~ print("loop")
-			#~ print(self.async_return["ways"])
 			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
-			# ~ options = self.ArrayIndexCheck(simplified, True)
 			print (simplified)
 			todo = self.decisionMaking(simplified)
-			#~ print(todo)
 			todo["do"]()
-			#~ print("endofloop")
-			
 	
 	def arrayCheck(self, array, value, inverted = False):
 		data = []
@@ -458,16 +445,6 @@ class Robot():
 					
 					self.position = position
 					
-					#~ print ("mapping")
-					
-					#~ print(direction)
-					
-					#~ print(distance)
-					
-					#~ print (blocks)
-					#~ print (measuringPoint)
-					#~ print (position)
-					
 					def calcStatus(x,y):
 						free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
 						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
@@ -491,12 +468,9 @@ class Robot():
 					
 					if ways[0]: #left
 						cal = self.calLeft(position, direction)
-						#~ print("left")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
 						x = cal[0]
 						y = cal[1]
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.mes_map[x][y]["free"] += 1
@@ -508,10 +482,7 @@ class Robot():
 						cal = self.calLeft(position, direction)
 						x = cal[0]
 						y = cal[1]
-						#~ print("left")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("left")
@@ -523,10 +494,7 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						#~ print("right")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								self.mes_map[x][y]["free"] += 1
@@ -538,10 +506,7 @@ class Robot():
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						#~ print("right")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("right")
@@ -553,10 +518,7 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						#~ print("straight")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done" :
 								self.mes_map[x][y]["free"] += 1
@@ -568,20 +530,13 @@ class Robot():
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
-						#~ print("straight")
-						#~ print(cal)
-						#~ print("from")
-						#~ print(position)
+						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
 								print("straight")
 								self.mes_map[x][y]["blocked"] += 1
 								
 								self.map[x][y] = calcStatus(x,y)
-					#~ print("map")
-					#~ print(self.map)
-					
-					print(self.mes_map)
 					
 					fh = open("/var/www/html/map.txt","w")
 					fh.write(stringify(self.map))
