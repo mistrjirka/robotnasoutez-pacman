@@ -168,13 +168,13 @@ class Robot():
 				calR = self.calRight(self.position, self.map_direction)
 				calL = self.calLeft(self.position, self.map_direction)
 				
-				if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1]= 0:
+				if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1] >= 0:
 					self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
 				
-				if calL[0] < len(self.map) and calL[1] < len(self.map[0]) and calL[0] >= 0 and calL[1]= 0:
+				if calL[0] < len(self.map) and calL[1] < len(self.map[0]) and calL[0] >= 0 and calL[1] >= 0:
 					self.map[calL[0]][calL[1]] = self.map_legend["total_block"]
 				
-				if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1]= 0:
+				if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1] >= 0:
 					self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
 				
 				self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
