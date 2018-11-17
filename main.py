@@ -354,8 +354,8 @@ class Robot():
 					x = cal[0]
 					y = cal[1]
 					if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
-						print(cal)
-						print(i)
+						#~ print(cal)
+						#~ print(i)
 						if strict:
 							if self.map[x][y]["todo"]:
 								options.append(i)
@@ -375,14 +375,18 @@ class Robot():
 			options = smartCheck(False)
 			
 		
+		if len(options) == 0:
+			print ("backward")
+			return self.config_array[len(self.config_array) - 1]
+		
 		print (options)
 		for x in self.config_array:
 			if x["index"] in options:
 				return x
 		
-		for y in self.config_array:
-			if y["index"] == -1:
-				return y
+		#~ for y in self.config_array:
+			#~ if y["index"] == -1:
+				#~ return y
 	
 	"""These three functions are for syncing searching with turning to prevent false results"""
 	
