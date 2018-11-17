@@ -185,7 +185,8 @@ class TrueTurn:
 				print("compesating 3")
 				
 				self.M2.run_forever(speed_sp=speed - 50 * direction)
-				
+				print("value")
+				print(self.GS.value())
 				while self.GS.value() not in field:
 					print(self.GS.value())
 					sleep(0.02)
