@@ -166,7 +166,7 @@ class Robot():
 					"correctable": False
 				}
 				def do():
-					self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
+					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
 				
 				t = Thread(target=do)
 				t.start()
