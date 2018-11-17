@@ -464,7 +464,7 @@ class Robot():
 							return self.map_legend["empty"].copy()
 					
 					if position[0] < len(self.map) and position[1] < len(self.map[0]) and position[0] >= 0 and position[1] >= 0: 
-					self.map[position[0]][position[1]] = self.map_legend["done"]
+						self.map[position[0]][position[1]] = self.map_legend["done"]
 					
 					if ways[0]: #left
 						cal = self.calLeft(position, direction)
