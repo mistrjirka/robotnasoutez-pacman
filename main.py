@@ -222,12 +222,11 @@ class Robot():
 		cache = []
 		
 		cache.append(self.US.value()/10)
-		sleep(0.02)
+		sleep(0.006)
 		cache.append(self.US.value()/10)
-		sleep(0.02)
+		sleep(0.005)
 		cache.append(self.US.value()/10)
-		sleep(0.02)
-		sleep(0.02)
+		sleep(0.005)
 		
 		print(cache)
 		
