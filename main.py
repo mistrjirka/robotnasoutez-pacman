@@ -365,7 +365,7 @@ class Robot():
 				i += 1 
 			print("options")
 			print(options)
-			
+			print("options end")
 			return options
 			
 		options = smartCheck()
@@ -452,18 +452,18 @@ class Robot():
 					def calcStatus(x,y):
 						free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
 						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
-						print("!!startofdebug!!")
-						print("calculated")
-						print(free)
-						print(blocked)
-						print([x,y])
-						print("!!endofdebug!!")
+						#~ print("!!startofdebug!!")
+						#~ print("calculated")
+						#~ print(free)
+						#~ print(blocked)
+						#~ print([x,y])
+						#~ print("!!endofdebug!!")
 						if free >= 0.7:
 							return self.map_legend["todo"].copy()
 							
 						if blocked >= 0.7:
 							return self.map_legend["blocked"].copy()
-						print("Here")
+						#~ print("Here")
 						
 						if blocked < 0.7 and free < 0.7:
 							return self.map_legend["empty"].copy()
@@ -482,8 +482,8 @@ class Robot():
 								
 								self.map[x][y] = calcStatus(x,y)
 					else:
-						print("ways left")
-						print(ways)
+						#~ print("ways left")
+						#~ print(ways)
 						cal = self.calLeft(position, direction)
 						x = cal[0]
 						y = cal[1]
@@ -506,8 +506,8 @@ class Robot():
 								
 								self.map[x][y] = calcStatus(x,y)
 					else:
-						print("ways right")
-						print(ways)
+						#~ print("ways right")
+						#~ print(ways)
 						cal = self.calRight(position, direction)
 						x = cal[0]
 						y = cal[1]
@@ -530,8 +530,8 @@ class Robot():
 								
 								self.map[x][y] = calcStatus(x,y)
 					else:
-						print("ways straight")
-						print(ways)
+						#~ print("ways straight")
+						#~ print(ways)
 						cal = self.calStraight(position, direction)
 						x = cal[0]
 						y = cal[1]
