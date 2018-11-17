@@ -667,7 +667,7 @@ class Robot():
 					
 					if not self.reset_DR:
 						
-						finalDistance = (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal
+						self.async_return["ways"][1] = (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal
 						sleep(0.1)
 					else:
 						self.reset_DR = False
