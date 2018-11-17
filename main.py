@@ -31,6 +31,8 @@ class Robot():
 		
 		self.block_size = block_size
 		
+		self.backward = False
+		
 		self.critical_distance = critical_distance
 		
 		self.turn_tolerance = turn_tolerance
@@ -149,7 +151,14 @@ class Robot():
 			sleep(0.5)
 		
 		def backward():
-			if self.TrueTurn.isRunning() is not True:
+			
+			
+			
+			print("back 2")
+			
+			if self.backward is not True:
+				
+				self.TrueTurn.stopMotors()
 				
 				print("full steam backwards")
 				
