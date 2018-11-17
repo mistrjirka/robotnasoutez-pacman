@@ -1,4 +1,4 @@
-from ev3dev2.sensor import GyroSensor
+from ev3dev2.sensor.lego import GyroSensor
 from ev3dev2.motor import LargeMotor
 from time import sleep
 import math
