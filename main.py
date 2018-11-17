@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.1, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.00, straight_tolerance = 1, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 1, motor_speed = 110, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -25,7 +25,6 @@ class Robot():
 		
 		self.SM = MediumMotor(SM)
 		self.SM_speed = SM_speed
-		self.SM_sleep = SM_sleep
 		
 		self.SM.reset()
 		self.position = starting_point
@@ -464,6 +463,7 @@ class Robot():
 						if blocked < 0.7 and free < 0.7:
 							return self.map_legend["empty"].copy()
 					
+					if position[0] < len(self.map) and position[1] < len(self.map[0]) and position[0] >= 0 and position[1] >= 0: 
 					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
 					if ways[0]: #left
