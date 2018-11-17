@@ -150,6 +150,9 @@ class Robot():
 		
 		def backward():
 			if self.TrueTurn.isRunning() is not True:
+				
+				print("full steam backwards")
+				
 				self.map[self.position[0]][self.position[1]] = {
 					"name": "blocked",
 					"free": False,
