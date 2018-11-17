@@ -177,7 +177,7 @@ class Robot():
 				self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
 				
 				def do():
-					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
+					self.TrueTurn.straight(1, self.motor_speed * -1.5, self.straight_tolerance)
 				
 				t = Thread(target=do)
 				t.start()
