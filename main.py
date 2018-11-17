@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.09, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], SM_sleep = 0.08, critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.01, straight_tolerance = 2, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -102,22 +102,26 @@ class Robot():
 			"done": {
 				"name": "done",
 				"free": True,
-				"todo": False
+				"todo": False,
+				"unkown": False
 			},
 			"todo": {
 				"name": "todo",
 				"free": True,
-				"todo": True
+				"todo": True,
+				"unkown": False
 			},
 			"blocked": {
 				"name": "blocked",
 				"free": False,
-				"todo": False
+				"todo": False,
+				"unkown": False
 			},
 			"empty":{
 				"name": "empty",
 				"free": False,
-				"todo": True
+				"todo": True,
+				"unkown": True
 			}
 		}
 		
@@ -218,11 +222,12 @@ class Robot():
 		cache = []
 		
 		cache.append(self.US.value()/10)
-		sleep(0.025)
+		sleep(0.02)
 		cache.append(self.US.value()/10)
-		sleep(0.025)
+		sleep(0.02)
 		cache.append(self.US.value()/10)
-		sleep(0.025)
+		sleep(0.02)
+		sleep(0.02)
 		
 		print(cache)
 		
@@ -467,12 +472,18 @@ class Robot():
 					def calcStatus(x,y):
 						free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
 						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
-						
+						print("!!startofdebug!!")
+						print("calculated")
+						print(free)
+						print(blocked)
+						print([x,y])
+						print("!!endofdebug!!")
 						if free >= 0.7:
 							return self.map_legend["todo"].copy()
 							
 						if blocked >= 0.7:
 							return self.map_legend["blocked"].copy()
+						
 						
 						return self.map_legend["blocked"].copy()
 					
@@ -580,7 +591,7 @@ class Robot():
 					fh2.write(stringify(self.mes_map))
 					fh2.close()
 					
-					sleep(0.2)
+					sleep(0.1)
 				
 				
 		t = Thread(target=mapping)
