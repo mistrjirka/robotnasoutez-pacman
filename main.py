@@ -96,31 +96,36 @@ class Robot():
 			"robot": {
 				"name": "robot",
 				"free": True,
-				"todo": False
+				"todo": False,
+				"correctable": True
 			},
 			"done": {
 				"name": "done",
 				"free": True,
 				"todo": False,
-				"unkown": False
+				"unkown": False,
+				"correctable": True
 			},
 			"todo": {
 				"name": "todo",
 				"free": True,
 				"todo": True,
-				"unkown": False
+				"unkown": False,
+				"correctable": True
 			},
 			"blocked": {
 				"name": "blocked",
 				"free": False,
 				"todo": False,
-				"unkown": False
+				"unkown": False,
+				"correctable": True
 			},
 			"empty":{
 				"name": "empty",
 				"free": False,
 				"todo": True,
-				"unkown": True
+				"unkown": True,
+				"correctable": True
 			}
 		}
 		
@@ -145,6 +150,13 @@ class Robot():
 		
 		def backward():
 			if self.TrueTurn.isRunning() is not True:
+				self.map[self.position[0]][self.position[1]] = {
+					"name": "blocked",
+					"free": False,
+					"todo": False,
+					"unkown": False,
+					"correctable": False
+				}
 				def do():
 					self.TrueTurn.straight(-1, self.motor_speed, self.straight_tolerance)
 				
@@ -454,23 +466,26 @@ class Robot():
 					self.position = position
 					
 					def calcStatus(x,y):
-						free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
-						blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
-						#~ print("!!startofdebug!!")
-						#~ print("calculated")
-						#~ print(free)
-						#~ print(blocked)
-						#~ print([x,y])
-						#~ print("!!endofdebug!!")
-						if free >= 0.7:
-							return self.map_legend["todo"].copy()
+						if self.map[x][y]["correctable"]:
+							free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
+							blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
+							#~ print("!!startofdebug!!")
+							#~ print("calculated")
+							#~ print(free)
+							#~ print(blocked)
+							#~ print([x,y])
+							#~ print("!!endofdebug!!")
+							if free >= 0.7:
+								return self.map_legend["todo"].copy()
+								
+							if blocked >= 0.7:
+								return self.map_legend["blocked"].copy()
+							#~ print("Here")
 							
-						if blocked >= 0.7:
-							return self.map_legend["blocked"].copy()
-						#~ print("Here")
-						
-						if blocked < 0.7 and free < 0.7:
-							return self.map_legend["empty"].copy()
+							if blocked < 0.7 and free < 0.7:
+								return self.map_legend["empty"].copy()
+						else:
+							return self.map[x][y]
 					
 					if position[0] < len(self.map) and position[1] < len(self.map[0]) and position[0] >= 0 and position[1] >= 0: 
 						self.map[position[0]][position[1]] = self.map_legend["done"]
