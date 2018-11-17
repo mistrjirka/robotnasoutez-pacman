@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.001, straight_tolerance = 1, motor_speed = 110, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.001, straight_tolerance = 1, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -346,6 +346,8 @@ class Robot():
 			if len(ways) == 0:
 				waycheck(False)
 			
+			print(ways)
+			
 			for z in ways:
 				if z:
 					cal = self.decision_config[i](self.position, self.map_direction)
@@ -362,6 +364,7 @@ class Robot():
 				
 				i += 1 
 			return options
+			print("options")
 		options = smartCheck()
 		
 		if len(options) == 0: #failsafe
