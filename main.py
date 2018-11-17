@@ -152,10 +152,6 @@ class Robot():
 		
 		def backward():
 			
-			
-			
-			print("back 2")
-			
 			if self.backward is not True:
 				
 				self.TrueTurn.stopMotors()
@@ -402,6 +398,8 @@ class Robot():
 		if len(options) == 0:
 			print ("backward")
 			return self.config_array[len(self.config_array) - 1]
+		
+		self.backward = False
 		
 		print (options)
 		for x in self.config_array:
