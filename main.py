@@ -397,7 +397,6 @@ class Robot():
 		for i in range (0,x):
 			cache.append([])
 			for j in range (0, y):
-				print (self)
 				cache[i].append(fill.copy())
 				
 		return cache
