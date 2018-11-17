@@ -482,9 +482,10 @@ class Robot():
 							
 						if blocked >= 0.7:
 							return self.map_legend["blocked"].copy()
+						print("Here")
 						
-						
-						return self.map_legend["blocked"].copy()
+						if blocked < 0.7 and free < 0.7:
+							return self.map_legend["blocked"].copy()
 					
 					self.map[position[0]][position[1]] = self.map_legend["done"]
 					
