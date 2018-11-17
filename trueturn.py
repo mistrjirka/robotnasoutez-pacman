@@ -1,4 +1,5 @@
-from ev3dev.ev3 import GyroSensor, LargeMotor
+from ev3dev2.sensor import GyroSensor
+from ev3dev2.motor import LargeMotor
 from time import sleep
 import math
 from timeit import default_timer as timer
