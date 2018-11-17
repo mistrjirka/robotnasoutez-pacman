@@ -128,6 +128,13 @@ class Robot():
 				"todo": True,
 				"unkown": True,
 				"correctable": True
+			},
+			"total_block":{
+				"name": "blocked",
+				"free": False,
+				"todo": False,
+				"unkown": False,
+				"correctable": False
 			}
 		}
 		
@@ -157,14 +164,18 @@ class Robot():
 				self.TrueTurn.stopMotors()
 				
 				print("full steam backwards")
+				calS = self.calStraight(self.position, self.map_direction)
+				calR = self.calRight(self.position, self.map_direction)
+				calL = self.calLeft(self.position, self.map_direction)
 				
-				self.map[self.position[0]][self.position[1]] = {
-					"name": "blocked",
-					"free": False,
-					"todo": False,
-					"unkown": False,
-					"correctable": False
-				}
+				self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
+				
+				self.map[calL[0]][calL[1]] = self.map_legend["total_block"]
+				
+				self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
+				
+				self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
+				
 				def do():
 					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
 				
