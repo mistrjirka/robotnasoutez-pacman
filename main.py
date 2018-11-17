@@ -8,7 +8,7 @@ import math
 from json import dumps as stringify
 
 class Robot():
-	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.001, straight_tolerance = 1, motor_speed = 100, motor_speed_turning = 100, block_size = 28):
+	def __init__(self, SM, mot1, mot2, GP = None, US = None, SM_speed = 1560, starting_point = [4,2], critical_distance = 10, max_map_size = [9,6], turn_tolerance = 0.001, straight_tolerance = 1, motor_speed = 100, motor_speed_turning = 100, block_size = 28, wheel_diameter = 5.5):
 		#this is intitial configuration
 		if GP == None:
 			self.TrueTurn = TrueTurn(mot1, mot2)
@@ -58,6 +58,14 @@ class Robot():
 		self.starting_point = starting_point
 		
 		self.measuring_position = starting_point
+		
+		self.stop_DR = False
+		
+		self.pause_DR = False
+		
+		self.reset_DR = False
+		
+		self.wheel_diameter
 		
 		self.map_direction_definitions = [
 			{
@@ -428,12 +436,15 @@ class Robot():
 	
 	def pauseSearch(self):
 		self.pause_way_check = True
+		self.pauseDR()
 	
 	def resumeSearch(self):
 		self.pause_way_check = False
+		self.resumeDR()
 	
 	def destroySearch(self):
 		self.stop_way_check = True
+		self.stopDR()
 	
 	def rawValue(self):
 		return self.US.value()
@@ -469,7 +480,7 @@ class Robot():
 					
 					direction = self.map_direction
 					
-					distance = self.TrueTurn.measureDistance()
+					distance = self.TrueTurn.measureDistance(self.wheel_diameter)
 					
 					blocks = math.floor(distance / self.block_size)
 					
@@ -493,18 +504,12 @@ class Robot():
 						if self.map[x][y]["correctable"]:
 							free = self.mes_map[x][y]["free"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
 							blocked = self.mes_map[x][y]["blocked"] / (self.mes_map[x][y]["free"] + self.mes_map[x][y]["blocked"])
-							#~ print("!!startofdebug!!")
-							#~ print("calculated")
-							#~ print(free)
-							#~ print(blocked)
-							#~ print([x,y])
-							#~ print("!!endofdebug!!")
+							
 							if free >= 0.7:
 								return self.map_legend["todo"].copy()
 								
 							if blocked >= 0.7:
 								return self.map_legend["blocked"].copy()
-							#~ print("Here")
 							
 							if blocked < 0.7 and free < 0.7:
 								return self.map_legend["empty"].copy()
@@ -648,6 +653,39 @@ class Robot():
 	def resumeMapping(self):
 		self.pause_mapping = False
 	
+	def deathReckoning(self):
+		def fun():
+			
+			defVal = self.async_return["ways"][1]
+			deg = self.TrueTurn.M1.position
+			turns = 0
+			
+			while not stop:
+				if self.pause_DR:
+					sleep(0.09)
+				else:
+					
+					if not self.reset_DR:
+						
+						finalDistance = (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal
+						sleep(0.1)
+					else:
+						self.reset_DR = False
+						
+						deg = self.TrueTurn.M1.position
+						defVal = self.async_return["ways"][1]
+		
+		t = Thread(target=fun)
+		t.start()
+	
+	def pauseDR():
+		self.pause_DR = True
+	
+	def stopDR():
+		self.stop_DR = True
+	
+	def resumeDR():
+		self.pause_DR = False
 
 if __name__ == "__main__":
 	Main = Robot("outC", "outA", "outB", critical_distance = 22.5)
