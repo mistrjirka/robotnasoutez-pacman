@@ -672,7 +672,7 @@ class Robot():
 					
 					if not self.reset_DR:
 						print("death recon")
-						print((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal)
+						print(defVal - (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)
 						
 						self.async_return["ways"][1] = defVal - (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi
 						sleep(0.1)
