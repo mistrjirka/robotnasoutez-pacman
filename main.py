@@ -197,6 +197,7 @@ class Robot():
 				self.pauseMapping()
 				
 				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) >  self.block_size:
+					print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
 					sleep(0.025)
 				
 				self.async_return["ways"] = self.checkWay()
