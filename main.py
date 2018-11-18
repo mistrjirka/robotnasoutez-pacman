@@ -191,8 +191,10 @@ class Robot():
 				
 				#~ self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
 				print("map")
+				
 				deg = self.TrueTurn.M1.position
 				def do():
+					print("motor")
 					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
 				t = Thread(target=do)
 				t.start()
@@ -200,7 +202,7 @@ class Robot():
 				sleep(0.1)
 				self.pauseMapping()
 				print("!!!!pause!!!!!")
-				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) > 28:
+				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) <= 28:
 					print("whileeee")
 					print(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi))
 					sleep(0.025)
