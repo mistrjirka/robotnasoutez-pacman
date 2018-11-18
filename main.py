@@ -203,11 +203,12 @@ class Robot():
 					print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
 					sleep(0.025)
 				
-				self.async_return["ways"] = self.checkWay()
+				#~ self.async_return["ways"] = self.checkWay()
 				self.TrueTurn.stopMotors()
 				t._Thread_stop()
 				#~ self.blocks -= self.block_size
-				
+				print("after")
+				print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
 				self.resumeMapping()
 				self.resumeSearch()
 			sleep(0.2)
