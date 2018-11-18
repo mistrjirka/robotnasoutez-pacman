@@ -679,11 +679,13 @@ class Robot():
 	def deathReckoning(self):
 		def fun():
 			
+			self.stop_DR = False
+			
 			defVal = self.async_return["ways"][1]
 			deg = self.TrueTurn.M1.position
 			turns = 0
 			
-			while not stop:
+			while not self.stop_DR:
 				if self.pause_DR:
 					sleep(0.09)
 				else:
