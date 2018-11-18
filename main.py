@@ -179,7 +179,6 @@ class Robot():
 				calS = self.calStraight(self.position, self.map_direction)
 				calR = self.calRight(self.position, self.map_direction)
 				calL = self.calLeft(self.position, self.map_direction)
-				print("still")
 				if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1] >= 0:
 					self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
 				
@@ -189,30 +188,20 @@ class Robot():
 				if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1] >= 0:
 					self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
 				
-				#~ self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
-				print("map")
-				
 				def do():
-					print("motor")
 					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
 				t = Thread(target=do)
 				t.start()
 				self.pauseSearch()
 				sleep(0.1)
 				self.pauseMapping()
-				print("!!!!pause!!!!!")
 				deg = self.TrueTurn.M1.position
 				
 				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) <= 28:
-					print("whileeee")
-					print(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi))
 					sleep(0.025)
 				
 				self.async_return["ways"] = self.checkWay()
 				self.TrueTurn.stopMotors()
-				print("after")
-				print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
-				print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) <= 28)
 				self.resumeMapping()
 				self.resumeSearch()
 			sleep(0.2)
@@ -221,7 +210,6 @@ class Robot():
 			straight()
 			sleep(0.2)
 			self.async_return["ways"] = self.checkWay()
-			#~ print(self.async_return["ways"])
 			self.resumeSearch()
 			sleep(0.1)
 		
@@ -288,8 +276,6 @@ class Robot():
 		cache.append(self.US.value()/10)
 		sleep(0.005)
 		
-		#~ print(cache)
-		
 		biggest = max(cache)
 		smallest = min(cache)
 		
@@ -331,15 +317,12 @@ class Robot():
 	
 	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
-		#~ print("start")
 		self.asyncWayCheck("ways")
-		#~ print("after waycheck")
 		self.deathReckoning()
 		self.asyncMapping()
 		
 		while True:
 			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
-			#~ print (simplified)
 			todo = self.decisionMaking(simplified)
 			todo["do"]()
 	
@@ -376,7 +359,6 @@ class Robot():
 		index = 0
 		data = []
 		for x in array:
-			#~ print(statement)
 			if x == statement:
 				data.append(index)
 			index += 1
@@ -414,16 +396,12 @@ class Robot():
 			if len(ways) == 0:
 				waycheck(False)
 			
-			#~ print(ways)
-			
 			for z in ways:
 				if z:
 					cal = self.decision_config[i](self.position, self.map_direction)
 					x = cal[0]
 					y = cal[1]
 					if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
-						#~ print(cal)
-						#~ print(i)
 						if strict:
 							if self.map[x][y]["todo"]:
 								options.append(i)
@@ -431,9 +409,6 @@ class Robot():
 							options.append(i)
 				
 				i += 1 
-			#~ print("options")
-			#~ print(options)
-			#~ print("options end")
 			return options
 			
 		options = smartCheck()
@@ -453,9 +428,6 @@ class Robot():
 			if x["index"] in options:
 				return x
 		
-		#~ for y in self.config_array:
-			#~ if y["index"] == -1:
-				#~ return y
 	
 	"""These three functions are for syncing searching with turning to prevent false results"""
 	
@@ -699,8 +671,8 @@ class Robot():
 				else:
 					
 					if not self.reset_DR:
-						#~ print("death recon")
-						#~ print((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal)
+						print("death recon")
+						print((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal)
 						
 						self.async_return["ways"][1] = (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal
 						sleep(0.1)
