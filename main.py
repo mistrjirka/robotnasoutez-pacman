@@ -396,6 +396,8 @@ class Robot():
 			if len(ways) == 0:
 				waycheck(False)
 			
+			print(ways)
+			
 			for z in ways:
 				if z:
 					cal = self.decision_config[i](self.position, self.map_direction)
@@ -596,7 +598,7 @@ class Robot():
 					fh2.write(stringify(self.mes_map))
 					fh2.close()
 					
-					sleep(0.1)
+					sleep(0.08)
 				
 				
 		t = Thread(target=mapping)
