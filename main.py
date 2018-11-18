@@ -605,7 +605,7 @@ class Robot():
 						
 						if x < len(self.map) and y < len(self.map[0]) and x >= 0 and y >= 0:
 							if self.map[x][y]["name"] != "done":
-								print("straight")
+								#~ print("straight")
 								self.mes_map[x][y]["blocked"] += 1
 								
 								self.map[x][y] = calcStatus(x,y)
@@ -665,7 +665,7 @@ class Robot():
 		
 		while finalDirection > 3 or finalDirection < 0:
 			finalDirection = correcting(finalDirection)
-			print(finalDirection) #debug
+			#~ print(finalDirection) #debug
 		
 		return finalDirection
 	
@@ -693,8 +693,8 @@ class Robot():
 				else:
 					
 					if not self.reset_DR:
-						print("death recon")
-						print((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal)
+						#~ print("death recon")
+						#~ print((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal)
 						
 						self.async_return["ways"][1] = (self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi + defVal
 						sleep(0.1)
