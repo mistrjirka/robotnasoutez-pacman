@@ -173,6 +173,8 @@ class Robot():
 				
 				self.TrueTurn.stopMotors()
 				
+				self.backward = True
+				
 				print("full steam backwards")
 				calS = self.calStraight(self.position, self.map_direction)
 				calR = self.calRight(self.position, self.map_direction)
@@ -203,9 +205,8 @@ class Robot():
 					print(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi))
 					sleep(0.025)
 				
-				#~ self.async_return["ways"] = self.checkWay()
+				self.async_return["ways"] = self.checkWay()
 				self.TrueTurn.stopMotors()
-				#~ self.blocks -= self.block_size
 				print("after")
 				print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
 				self.resumeMapping()
@@ -442,7 +443,6 @@ class Robot():
 			print ("backward")
 			return self.config_array[len(self.config_array) - 1]
 		
-		self.backward = False
 		
 		print (options)
 		for x in self.config_array:
