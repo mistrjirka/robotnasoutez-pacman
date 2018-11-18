@@ -195,6 +195,7 @@ class Robot():
 				t = Thread(target=do)
 				t.start()
 				self.pauseSearch()
+				sleep(0.1)
 				self.pauseMapping()
 				print("!!!!pause!!!!!")
 				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) >  self.block_size:
@@ -203,8 +204,8 @@ class Robot():
 					sleep(0.025)
 				
 				self.async_return["ways"] = self.checkWay()
-				
 				self.TrueTurn.stopMotors()
+				t._Thread_stop()
 				#~ self.blocks -= self.block_size
 				
 				self.resumeMapping()
