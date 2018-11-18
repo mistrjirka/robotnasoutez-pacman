@@ -187,7 +187,7 @@ class Robot():
 				if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1] >= 0:
 					self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
 				
-				self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
+				#~ self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
 				print("map")
 				deg = self.TrueTurn.M1.position
 				def do():
