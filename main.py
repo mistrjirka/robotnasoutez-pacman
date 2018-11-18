@@ -200,7 +200,7 @@ class Robot():
 				print("!!!!pause!!!!!")
 				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) > 28:
 					print("whileeee")
-					print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
+					print(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi))
 					sleep(0.025)
 				
 				#~ self.async_return["ways"] = self.checkWay()
