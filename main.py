@@ -195,8 +195,9 @@ class Robot():
 				
 				self.pauseSearch()
 				self.pauseMapping()
-				
+				print("pause")
 				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) >  self.block_size:
+					print("whileeee")
 					print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
 					sleep(0.025)
 				
