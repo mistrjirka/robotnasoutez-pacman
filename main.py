@@ -177,7 +177,7 @@ class Robot():
 				calS = self.calStraight(self.position, self.map_direction)
 				calR = self.calRight(self.position, self.map_direction)
 				calL = self.calLeft(self.position, self.map_direction)
-				print("still)
+				print("still")
 				if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1] >= 0:
 					self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
 				
