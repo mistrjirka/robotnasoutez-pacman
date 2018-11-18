@@ -65,7 +65,7 @@ class Robot():
 		
 		self.reset_DR = False
 		
-		self.wheel_diameter
+		self.wheel_diameter = wheel_diameter
 		
 		self.blocks = 0
 		
