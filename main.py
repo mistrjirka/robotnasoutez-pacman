@@ -67,6 +67,8 @@ class Robot():
 		
 		self.wheel_diameter
 		
+		self.blocks = 0
+		
 		self.map_direction_definitions = [
 			{
 				"x": 0,
@@ -187,12 +189,24 @@ class Robot():
 				
 				self.map[self.position[0]][self.position[1]] = self.map_legend["total_block"]
 				
-				def do():
-					self.TrueTurn.straight(1, self.motor_speed * -1.5, self.straight_tolerance)
+				deg = self.TrueTurn.M1.position
 				
-				t = Thread(target=do)
-				t.start()
-			sleep(0.5)
+				self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
+				
+				self.pauseSearch()
+				self.pauseMapping()
+				
+				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) >  self.block_size:
+					sleep(0.025)
+				
+				self.async_return["ways"] = self.checkWay()
+				
+				self.TrueTurn.stopMotors()
+				#~ self.blocks -= self.block_size
+				
+				self.resumeMapping()
+				self.resumeSearch()
+			sleep(0.2)
 		
 		def afterTurn():
 			straight()
@@ -301,6 +315,9 @@ class Robot():
 		
 		self.SM.run_to_abs_pos(position_sp=0, speed_sp=self.SM_speed, stop_action="hold")
 		self.SM.wait_until_not_moving()
+		
+		self.reset_DR = True
+		
 		return data
 	
 	def cycle(self): #main function
@@ -482,19 +499,19 @@ class Robot():
 					
 					distance = self.TrueTurn.measureDistance(self.wheel_diameter)
 					
-					blocks = math.floor(distance / self.block_size)
+					self.blocks = math.floor(distance / self.block_size)
 					
 					measuringPoint = self.measuring_position
 					
 					x = measuringPoint[0]
 					
 					if self.map_direction_definitions[direction]["x"] != 0:
-						x += self.map_direction_definitions[direction]["x"] * blocks
+						x += self.map_direction_definitions[direction]["x"] * self.blocks
 					
 					y = measuringPoint[1]
 					
 					if self.map_direction_definitions[direction]["y"] != 0:
-						y += self.map_direction_definitions[direction]["y"] * blocks
+						y += self.map_direction_definitions[direction]["y"] * self.blocks
 					
 					position = [x, y]
 					
@@ -622,6 +639,12 @@ class Robot():
 		return [
 			position[0] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"],
 			position[1] + self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
+		]
+	
+	def calBackwards(self, position, direction):
+		return [
+			position[0] - self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["x"],
+			position[1] - self.map_direction_definitions[self.directionCorrection(direction + self.map_config_array[2]["axis"])]["y"]
 		]
 	
 	def directionCorrection(self, direction):
