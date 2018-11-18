@@ -205,7 +205,6 @@ class Robot():
 				
 				#~ self.async_return["ways"] = self.checkWay()
 				self.TrueTurn.stopMotors()
-				t._Thread_stop()
 				#~ self.blocks -= self.block_size
 				print("after")
 				print(abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)))
