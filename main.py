@@ -328,7 +328,7 @@ class Robot():
 		#~ print("start")
 		self.asyncWayCheck("ways")
 		#~ print("after waycheck")
-		
+		self.deathReckoning()
 		self.asyncMapping()
 		
 		while True:
@@ -708,13 +708,13 @@ class Robot():
 		t = Thread(target=fun)
 		t.start()
 	
-	def pauseDR():
+	def pauseDR(self):
 		self.pause_DR = True
 	
-	def stopDR():
+	def stopDR(self):
 		self.stop_DR = True
 	
-	def resumeDR():
+	def resumeDR(self):
 		self.pause_DR = False
 
 if __name__ == "__main__":
