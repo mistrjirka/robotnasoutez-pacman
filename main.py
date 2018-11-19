@@ -439,6 +439,7 @@ class Robot():
 	
 	def resumeSearch(self):
 		self.pause_way_check = False
+		sleep(0.1)
 		self.resumeDR()
 	
 	def destroySearch(self):
@@ -669,7 +670,7 @@ class Robot():
 			
 			while not self.stop_DR:
 				if self.pause_DR:
-					sleep(0.09)
+					sleep(0.1)
 				else:
 					
 					if not self.reset_DR:
