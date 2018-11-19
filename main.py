@@ -318,7 +318,7 @@ class Robot():
 	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
 		self.asyncWayCheck("ways")
-		#~ self.deathReckoning()
+		self.deathReckoning()
 		self.asyncMapping()
 		sleep(0.2)
 		while True:
