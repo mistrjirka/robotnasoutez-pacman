@@ -478,6 +478,9 @@ class Robot():
 				else:
 					ways = self.arrayCheck(self.async_return["ways"], self.critical_distance)
 					
+					print ("real ways")
+					print(ways)
+					print (self.async_return["ways"])
 					direction = self.map_direction
 					
 					distance = self.TrueTurn.measureDistance(self.wheel_diameter)
