@@ -135,7 +135,7 @@ class Robot():
 			"empty":{
 				"name": "empty",
 				"free": False,
-				"todo": True,
+				"todo": False,
 				"unkown": True,
 				"correctable": True
 			},
