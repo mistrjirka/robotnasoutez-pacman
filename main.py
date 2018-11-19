@@ -320,7 +320,7 @@ class Robot():
 		self.asyncWayCheck("ways")
 		#~ self.deathReckoning()
 		self.asyncMapping()
-		
+		sleep(0.2)
 		while True:
 			simplified = self.arrayCheck(self.async_return["ways"], self.critical_distance)
 			todo = self.decisionMaking(simplified)
