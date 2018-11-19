@@ -210,6 +210,7 @@ class Robot():
 			straight()
 			sleep(0.3)
 			self.async_return["ways"] = self.checkWay()
+			print(self.async_return["ways"] )
 			self.resumeSearch()
 			sleep(0.1)
 		
