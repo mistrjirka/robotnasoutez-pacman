@@ -208,7 +208,7 @@ class Robot():
 		
 		def afterTurn():
 			straight()
-			sleep(0.2)
+			sleep(0.3)
 			self.async_return["ways"] = self.checkWay()
 			self.resumeSearch()
 			sleep(0.1)
