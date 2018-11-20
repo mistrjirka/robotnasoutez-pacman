@@ -208,11 +208,14 @@ class Robot():
 		
 		def afterTurn():
 			straight()
-			sleep(0.3)
-			self.async_return["ways"] = self.checkWay()
 			print("multi ways")
 			print(self.async_return["ways"] )
 			self.resumeSearch()
+			sleep(0.3)
+			#~ self.async_return["ways"] = self.checkWay()
+			print("multi ways")
+			print(self.async_return["ways"] )
+			
 			sleep(0.1)
 		
 		def turnLeft():
