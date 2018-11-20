@@ -207,11 +207,11 @@ class Robot():
 			sleep(0.2)
 		
 		def afterTurn():
-			straight()
 			print("multi ss ways")
 			print(self.async_return["ways"] )
 			self.resumeSearch()
-			sleep(0.3)
+			sleep(5)
+			straight()
 			#~ self.async_return["ways"] = self.checkWay()
 			print("multi ways")
 			print(self.async_return["ways"] )
