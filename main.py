@@ -210,6 +210,7 @@ class Robot():
 			straight()
 			sleep(0.3)
 			self.async_return["ways"] = self.checkWay()
+			print("multi ways")
 			print(self.async_return["ways"] )
 			self.resumeSearch()
 			sleep(0.1)
@@ -319,7 +320,7 @@ class Robot():
 	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
 		self.asyncWayCheck("ways")
-		#~ self.deathReckoning()
+		self.deathReckoning()
 		self.asyncMapping()
 		sleep(0.2)
 		while True:
