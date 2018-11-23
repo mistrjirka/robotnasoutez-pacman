@@ -693,7 +693,7 @@ class Robot():
 						deg = self.TrueTurn.M1.position
 						defVal = self.async_return["ways"][1]
 		
-		t = Thread(target=fun)
+		t =S Thread(target=fun)
 		t.start()
 	
 	def pauseDR(self):
@@ -706,7 +706,7 @@ class Robot():
 		self.pause_DR = False
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 19.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 28)
 	def runProgram():
 		Main.cycle()
 		
