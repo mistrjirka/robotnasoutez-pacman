@@ -323,7 +323,7 @@ class Robot():
 	def cycle(self): #main function
 		self.async_return["ways"] = self.checkWay()
 		self.asyncWayCheck("ways")
-		#~ self.deathReckoning()
+		self.deathReckoning()
 		self.asyncMapping()
 		sleep(0.2)
 		while True:
@@ -706,7 +706,7 @@ class Robot():
 		self.pause_DR = False
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 15)
+	Main = Robot("outC", "outA", "outB", critical_distance = 16)
 	def runProgram():
 		Main.cycle()
 		
