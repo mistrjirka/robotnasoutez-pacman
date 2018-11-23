@@ -706,7 +706,7 @@ class Robot():
 		self.pause_DR = False
 
 if __name__ == "__main__":
-	Main = Robot("outC", "outA", "outB", critical_distance = 22.5)
+	Main = Robot("outC", "outA", "outB", critical_distance = 19.5)
 	def runProgram():
 		Main.cycle()
 		
