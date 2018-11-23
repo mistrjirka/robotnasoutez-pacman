@@ -206,7 +206,7 @@ class TrueTurn:
 		turns = (self.M1.position - self.distance) / 360
 		
 		dist = turns * wheelDiameter * math.pi
-		return dist
+		return dist + 14
 	
 	def measureDistanceRunning(self):
 		return self.MDistanceRunning
