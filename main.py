@@ -168,42 +168,43 @@ class Robot():
 			sleep(0.5)
 		
 		def backward():
-			
 			if self.backward is not True:
+				self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
+			#~ if self.backward is not True:
 				
-				self.TrueTurn.stopMotors()
+				#~ self.TrueTurn.stopMotors()
 				
-				self.backward = True
+				#~ self.backward = True
 				
-				print("full steam backwards")
-				calS = self.calStraight(self.position, self.map_direction)
-				calR = self.calRight(self.position, self.map_direction)
-				calL = self.calLeft(self.position, self.map_direction)
-				if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1] >= 0:
-					self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
+				#~ print("full steam backwards")
+				#~ calS = self.calStraight(self.position, self.map_direction)
+				#~ calR = self.calRight(self.position, self.map_direction)
+				#~ calL = self.calLeft(self.position, self.map_direction)
+				#~ if calS[0] < len(self.map) and calS[1] < len(self.map[0]) and calS[0] >= 0 and calS[1] >= 0:
+					#~ self.map[calS[0]][calS[1]] = self.map_legend["total_block"]
 				
-				if calL[0] < len(self.map) and calL[1] < len(self.map[0]) and calL[0] >= 0 and calL[1] >= 0:
-					self.map[calL[0]][calL[1]] = self.map_legend["total_block"]
+				#~ if calL[0] < len(self.map) and calL[1] < len(self.map[0]) and calL[0] >= 0 and calL[1] >= 0:
+					#~ self.map[calL[0]][calL[1]] = self.map_legend["total_block"]
 				
-				if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1] >= 0:
-					self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
+				#~ if calR[0] < len(self.map) and calR[1] < len(self.map[0]) and calR[0] >= 0 and calR[1] >= 0:
+					#~ self.map[calR[0]][calR[1]] = self.map_legend["total_block"]
 				
-				def do():
-					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
-				t = Thread(target=do)
-				t.start()
-				self.pauseSearch()
-				sleep(0.1)
-				self.pauseMapping()
-				deg = self.TrueTurn.M1.position
+				#~ def do():
+					#~ self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
+				#~ t = Thread(target=do)
+				#~ t.start()
+				#~ self.pauseSearch()
+				#~ sleep(0.1)
+				#~ self.pauseMapping()
+				#~ deg = self.TrueTurn.M1.position
 				
-				while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) <= 28:
-					sleep(0.025)
+				#~ while abs(((self.TrueTurn.M1.position - deg)/360 * self.wheel_diameter * math.pi)) <= 28:
+					#~ sleep(0.025)
 				
-				self.async_return["ways"] = self.checkWay()
-				self.TrueTurn.stopMotors()
-				self.resumeMapping()
-				self.resumeSearch()
+				#~ self.async_return["ways"] = self.checkWay()
+				#~ self.TrueTurn.stopMotors()
+				#~ self.resumeMapping()
+				#~ self.resumeSearch()
 			sleep(0.2)
 		
 		def afterTurn():
