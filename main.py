@@ -169,7 +169,8 @@ class Robot():
 		
 		def backward():
 			if self.backward is not True:
-				self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
+				def do():
+					self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
 			#~ if self.backward is not True:
 				
 				#~ self.TrueTurn.stopMotors()
@@ -191,8 +192,8 @@ class Robot():
 				
 				#~ def do():
 					#~ self.TrueTurn.straight(1, self.motor_speed * -1, self.straight_tolerance)
-				#~ t = Thread(target=do)
-				#~ t.start()
+				t = Thread(target=do)
+				t.start()
 				#~ self.pauseSearch()
 				#~ sleep(0.1)
 				#~ self.pauseMapping()
