@@ -275,11 +275,11 @@ class Robot():
 		cache = []
 		
 		cache.append(self.US.value()/10)
-		sleep(0.006)
+		sleep(0.016)
 		cache.append(self.US.value()/10)
-		sleep(0.005)
+		sleep(0.015)
 		cache.append(self.US.value()/10)
-		sleep(0.005)
+		sleep(0.015)
 		
 		biggest = max(cache)
 		smallest = min(cache)
